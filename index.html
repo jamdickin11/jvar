@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jonathan Roche — Operations · Security · Emerging Tech</title>
+<title>Jonathan Victor Alexandre Roche — Digital Transformation & AI Consultant · Cambodia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -370,7 +370,7 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
 @keyframes blink{50%{opacity:0}}
 
 .hero p.summary{
-  color:var(--muted);max-width:60ch;font-size:clamp(.95rem,1.4vw,1.08rem);
+  color:var(--muted);max-width:62ch;font-size:clamp(.95rem,1.4vw,1.08rem);
   margin-bottom:38px;
 }
 
@@ -548,7 +548,6 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   color:var(--text);
   line-height:1.5;
 }
-/* Single-image gallery */
 .gallery-grid.single{
   grid-template-columns:1fr;
   max-width:800px;
@@ -559,6 +558,226 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   height:520px;
   object-position:center 20%;
 }
+
+/* ============================
+   SERVICES GRID
+   ============================ */
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
+  margin-top:56px;
+}
+.service-card{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:28px 26px;
+  background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+  backdrop-filter:blur(12px);
+  transition:transform .5s var(--ease),border-color .5s,background .5s;
+  overflow:hidden;
+}
+.service-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:0;
+  transition:opacity .5s;
+}
+.service-card:hover::before{opacity:1}
+.service-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(34,225,255,.35);
+  background:linear-gradient(160deg,rgba(34,225,255,.07),rgba(139,92,246,.03));
+}
+.service-num{
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.26em;
+  color:var(--cyan);
+  display:block;
+  margin-bottom:14px;
+}
+.service-card h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.05rem;
+  font-weight:600;
+  margin-bottom:10px;
+  line-height:1.3;
+  letter-spacing:-.01em;
+}
+.service-card p{
+  font-size:.84rem;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ============================
+   PRICING / PACKAGES
+   ============================ */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px;
+  margin-top:56px;
+  align-items:stretch;
+}
+.price-card{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:34px 30px 32px;
+  background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.008));
+  backdrop-filter:blur(14px);
+  display:flex;
+  flex-direction:column;
+  transition:transform .55s var(--ease),border-color .55s,box-shadow .55s;
+}
+.price-card::before{
+  content:'';
+  position:absolute;top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .6s var(--ease);
+}
+.price-card:hover::before{transform:scaleX(1)}
+.price-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(34,225,255,.4);
+  box-shadow:0 30px 70px -40px rgba(34,225,255,.55);
+}
+.price-card.featured{
+  border-color:rgba(139,92,246,.5);
+  background:linear-gradient(165deg,rgba(139,92,246,.12),rgba(34,225,255,.05));
+  box-shadow:0 24px 60px -30px rgba(139,92,246,.55);
+}
+.price-card.featured::after{
+  content:'FLAGSHIP';
+  position:absolute;
+  top:-1px;right:24px;
+  transform:translateY(-50%);
+  font-family:var(--mono);
+  font-size:.58rem;
+  letter-spacing:.24em;
+  padding:5px 12px;
+  border-radius:99px;
+  background:linear-gradient(100deg,var(--cyan),var(--violet));
+  color:#03040a;
+  font-weight:600;
+}
+.price-num{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.24em;
+  color:var(--muted);
+  display:block;
+  margin-bottom:14px;
+}
+.price-card h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:14px;
+  line-height:1.25;
+}
+.price-amount{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2rem,4vw,2.6rem);
+  font-weight:700;
+  line-height:1;
+  background:linear-gradient(180deg,#fff,#8fa0b8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:6px;
+}
+.price-amount small{
+  font-size:.85rem;
+  font-weight:400;
+  color:var(--muted);
+  -webkit-text-fill-color:var(--muted);
+  letter-spacing:.06em;
+  margin-left:4px;
+}
+.price-desc{
+  font-size:.85rem;
+  color:var(--muted);
+  line-height:1.6;
+  margin:16px 0 20px;
+  padding-bottom:20px;
+  border-bottom:1px dashed rgba(120,160,220,.16);
+}
+.price-list{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+  margin-bottom:26px;
+  flex:1;
+}
+.price-list li{
+  display:flex;
+  gap:11px;
+  align-items:flex-start;
+  font-size:.84rem;
+  color:#a9b8cc;
+  line-height:1.5;
+}
+.price-list li::before{
+  content:'▸';
+  color:var(--cyan);
+  font-size:.8rem;
+  flex:0 0 auto;
+  margin-top:1px;
+  text-shadow:0 0 8px rgba(34,225,255,.8);
+}
+.price-card.featured .price-list li::before{color:var(--magenta);text-shadow:0 0 8px rgba(255,47,185,.8)}
+.price-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 24px;
+  border-radius:99px;
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  border:1px solid var(--glass-b);
+  background:var(--glass);
+  color:var(--text);
+  transition:transform .35s var(--ease),border-color .35s,color .35s,background .35s;
+  cursor:pointer;
+  width:100%;
+}
+.price-cta:hover{
+  transform:translateY(-2px);
+  border-color:rgba(34,225,255,.5);
+  background:rgba(34,225,255,.08);
+  color:var(--cyan);
+}
+.price-card.featured .price-cta{
+  background:linear-gradient(100deg,var(--cyan),var(--violet));
+  color:#03040a;
+  border-color:transparent;
+  font-weight:600;
+}
+.price-card.featured .price-cta:hover{
+  background:linear-gradient(100deg,var(--magenta),var(--gold));
+  color:#03040a;
+}
+.pricing-note{
+  margin-top:34px;
+  padding:22px 26px;
+  border-radius:14px;
+  border:1px dashed rgba(120,160,220,.22);
+  background:rgba(255,255,255,.02);
+  font-size:.88rem;
+  color:var(--muted);
+  text-align:center;
+  line-height:1.65;
+}
+.pricing-note strong{color:var(--text);font-weight:500}
 
 /* ============================
    EXPERIENCE TIMELINE
@@ -903,6 +1122,9 @@ footer a:hover{color:var(--magenta)}
   .gallery-grid.single .gallery-item img{height:420px}
   .gallery-item figcaption{padding:20px 18px 18px}
   .gallery-desc{font-size:.82rem}
+  .price-card{padding:28px 24px 26px}
+  .price-card.featured::after{right:18px}
+  .pricing-note{font-size:.82rem;padding:18px 20px}
   .contact h2{font-size:clamp(1.9rem,9vw,3rem)}
   .contact .cta-row{width:100%}
   .contact .cta-row .btn{width:100%}
@@ -953,7 +1175,7 @@ footer a:hover{color:var(--magenta)}
 <div id="loader">
   <div class="loader-core">
     <div class="loader-rings"><i></i><i></i><i></i><b></b></div>
-    <p>Initialising Profile</p>
+    <p>Initialising Consultant Profile</p>
     <div class="loader-bar"><span></span></div>
   </div>
 </div>
@@ -977,14 +1199,14 @@ footer a:hover{color:var(--magenta)}
 <header class="nav" id="nav">
   <a href="#home" class="brand">
     <span class="mark"></span>
-    <span>J.V.A. Roche</span>
+    <span>Jonathan Roche</span>
   </a>
   <nav class="nav-links" id="navLinks">
     <a href="#home" class="active">Home</a>
     <a href="#about">Profile</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#services">Services</a>
+    <a href="#packages">Packages</a>
     <a href="#experience">Experience</a>
-    <a href="#skills">Capabilities</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
@@ -996,33 +1218,35 @@ footer a:hover{color:var(--magenta)}
 <section class="hero" id="home">
   <div class="hero-grid-floor"></div>
   <div class="wrap">
-    <div class="status-pill"><span class="dot"></span> Available Immediately · Phnom Penh, Cambodia</div>
+    <div class="status-pill"><span class="dot"></span> Independent Consultant · Phnom Penh, Cambodia</div>
 
     <h1>
-      <span class="line"><span>Jonathan</span></span>
-      <span class="line"><span class="grad">Victor Alexandre</span></span>
-      <span class="line"><span>Roche</span></span>
+      <span class="line"><span>Digital</span></span>
+      <span class="line"><span class="grad">Transformation</span></span>
+      <span class="line"><span>Consulting</span></span>
     </h1>
 
     <div class="role-line"><span id="typed"></span><span class="cursor"></span></div>
 
     <p class="summary">
-      Operations &amp; security leader with <strong>25+ years</strong> across hospitality, luxury retail,
-      VIP protection and close protection worldwide — now specialised in
-      <strong>emerging technology</strong>: prompt engineering, AI ethics, cybersecurity, blockchain,
-      social engineering and agentic systems.
+      Jonathan Victor Alexandre Roche — independent consultant based in Phnom Penh, guiding
+      businesses of every size through <strong>digital transformation</strong>,
+      <strong>Industry 4.0 readiness</strong>, <strong>AI &amp; agentic system deployment</strong>,
+      <strong>digital ethics</strong>, and <strong>cybersecurity fundamentals</strong>.
+      Backed by 15+ years of international operational leadership and six years of dedicated
+      mastery in emerging technology.
     </p>
 
     <div class="cta-row">
-      <a href="#experience" class="btn solid"><span>Explore Career</span><span class="arrow">→</span></a>
-      <a href="#contact" class="btn"><span>Get In Touch</span><span class="arrow">→</span></a>
+      <a href="#packages" class="btn solid"><span>View Packages</span><span class="arrow">→</span></a>
+      <a href="#contact" class="btn"><span>Book a Consultation</span><span class="arrow">→</span></a>
     </div>
 
     <div class="hero-stats">
-      <div class="hstat reveal"><b data-count="25" data-suffix="+">0</b><small>Years Experience</small></div>
-      <div class="hstat reveal d1"><b data-count="70" data-suffix="+">0</b><small>Team Members Led</small></div>
-      <div class="hstat reveal d2"><b data-count="6" data-suffix="">0</b><small>Years in Emerging Tech</small></div>
-      <div class="hstat reveal d3"><b data-count="3" data-suffix="">0</b><small>Languages</small></div>
+      <div class="hstat reveal"><b data-count="15" data-suffix="+">0</b><small>Years Professional Experience</small></div>
+      <div class="hstat reveal d1"><b data-count="6" data-suffix="">0</b><small>Years in Emerging Tech</small></div>
+      <div class="hstat reveal d2"><b data-count="8" data-suffix="">0</b><small>Consulting Domains</small></div>
+      <div class="hstat reveal d3"><b data-count="3" data-suffix="">0</b><small>Service Packages</small></div>
     </div>
   </div>
 
@@ -1034,67 +1258,127 @@ footer a:hover{color:var(--magenta)}
   <div class="wrap">
     <div class="about-grid">
       <div>
-        <div class="eyebrow reveal">Profile</div>
-        <h2 class="title reveal d1">Operations &amp; security leader,<br><em>specialised in emerging technology.</em></h2>
+        <div class="eyebrow reveal">The Consultant</div>
+        <h2 class="title reveal d1">Guiding organisations through<br><em>the digital revolution.</em></h2>
         <p class="lead reveal d2">
-          Beyond 25+ years in international operations, hospitality and physical security — including
-          <strong>Hotel Manager</strong> in Phnom Penh overseeing <strong>20 employees</strong> and
-          <strong>Director &amp; General Manager</strong> of a Phnom Penh nightlife venue — my core focus
-          since 2020 has been the mastery of <strong>emerging technology and digital risk</strong>.
+          I advise small, medium and large companies on how to navigate digital transformation
+          with clarity, discipline and measurable outcomes. My work combines strategic
+          advisory with hands-on implementation — from the first diagnostic review through
+          to full deployment, staff formation and ongoing technical support.
         </p>
         <p class="lead reveal d2" style="margin-top:18px">
-          From <strong>2020 to 2026</strong> I have dedicated myself to deepening expertise in
-          <strong>Prompt Engineering</strong>, <strong>AI Ethics</strong>, <strong>Cybersecurity</strong>,
-          <strong>Blockchain &amp; Digital Assets</strong>, <strong>Social Engineering</strong> and
-          <strong>Agentic Systems</strong>. This blend of physical security and digital literacy allows me
-          to operate at the intersection of human risk, operational resilience and intelligent automation.
+          Since 2020 I have dedicated myself to the mastery of <strong>Prompt Engineering</strong>,
+          <strong>AI Ethics</strong>, <strong>Cybersecurity</strong>, <strong>Blockchain &amp;
+          Digital Assets</strong>, <strong>Social Engineering</strong> and <strong>Agentic Systems</strong>.
+          This foundation, combined with 15+ years of operational and security leadership across
+          France, China and Cambodia, allows me to advise at the intersection of human risk,
+          operational resilience and intelligent automation.
         </p>
         <p class="lead reveal d2" style="margin-top:18px">
-          As an <strong>AI ethicist</strong>, I focus on responsible deployment, bias awareness and the
-          human impact of automated systems. As a <strong>security professional</strong> with worldwide
-          bodyguard and close-protection experience — including <strong>Saint-Tropez</strong> with
-          <strong>Louis Vuitton</strong> and <strong>Dior</strong> — I bring situational awareness,
-          discretion and calm under pressure to every environment. Fluent in French and English with
-          professional working Mandarin Chinese, I thrive in multicultural settings across Greater China
-          and Southeast Asia.
+          As an <strong>AI ethicist</strong>, I help leadership teams understand the responsible
+          deployment of AI — bias awareness, governance and the human impact of automated systems.
+          As a former <strong>close protection and security professional</strong>, I bring
+          situational awareness, discretion and calm decision-making to every engagement.
         </p>
 
         <div class="pillars">
           <div class="pillar reveal d3">
             <i>◈</i>
             <div>
-              <h4>Emerging Technology &amp; AI</h4>
-              <p>Prompt engineering, AI ethics, agentic systems, blockchain, digital assets and emerging tech research.</p>
+              <h4>Strategic Technology Advisory</h4>
+              <p>Digital transformation, Industry 4.0 readiness, AI ethics, governance and long-term technology strategy.</p>
             </div>
           </div>
           <div class="pillar reveal d4">
             <i>◆</i>
             <div>
-              <h4>Physical Security &amp; Close Protection</h4>
-              <p>Worldwide bodyguard services, VIP protection, loss prevention, crowd management and conflict resolution.</p>
+              <h4>AI &amp; Agentic Implementation</h4>
+              <p>LLM deployment, agentic system architecture, installation, testing, continuous model updates and support.</p>
             </div>
           </div>
           <div class="pillar reveal d5">
             <i>◇</i>
             <div>
-              <h4>Operations &amp; Hospitality Leadership</h4>
-              <p>Team leadership, budget oversight, VIP guest relations and luxury service standards.</p>
+              <h4>Cybersecurity &amp; Formation</h4>
+              <p>Infrastructure security, safe digital behaviours, employee and executive formation, crisis readiness.</p>
             </div>
           </div>
         </div>
       </div>
 
       <aside class="info-card reveal d2">
-        <h3>Quick Data</h3>
-        <div class="info-row"><span>Location</span><span>Phnom Penh, Cambodia</span></div>
-        <div class="info-row"><span>Nationality</span><span>French</span></div>
-        <div class="info-row"><span>Availability</span><span>Immediate</span></div>
-        <div class="info-row"><span>Mobility</span><span>Cambodia · SEA · International</span></div>
+        <h3>Engagement Overview</h3>
+        <div class="info-row"><span>Base</span><span>Phnom Penh, Cambodia</span></div>
+        <div class="info-row"><span>Coverage</span><span>Cambodia · SEA · International</span></div>
+        <div class="info-row"><span>Clients</span><span>Small · Medium · Large Enterprise</span></div>
+        <div class="info-row"><span>Delivery</span><span>Advisory or Full Implementation</span></div>
         <div class="info-row"><span>Languages</span><span>FR · EN · 中文</span></div>
-        <div class="info-row"><span>Core Focus</span><span>AI · Cyber · Blockchain</span></div>
-        <div class="info-row"><span>Specialty</span><span>Prompt Eng · AI Ethics · Agentic</span></div>
-        <div class="info-row"><span>Security</span><span>Close Protection · VIP</span></div>
+        <div class="info-row"><span>Availability</span><span>Immediate</span></div>
+        <div class="info-row"><span>Focus</span><span>AI · Cyber · Digital Transformation</span></div>
+        <div class="info-row"><span>Engagement</span><span>Hourly · Retainer · Project</span></div>
       </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow reveal">Consulting Domains</div>
+    <h2 class="title reveal d1">Eight areas of expertise,<br><em>one integrated approach.</em></h2>
+    <p class="lead reveal d2">
+      Every engagement is tailored to the maturity, sector and ambition of the organisation —
+      from first-time digital reviews to advanced AI deployment.
+    </p>
+
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <span class="service-num">01 / TRANSFORMATION</span>
+        <h3>Digital Transformation Strategy</h3>
+        <p>Structured roadmap for modernising operations, processes and systems — aligned with business objectives and measurable outcomes.</p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <span class="service-num">02 / INDUSTRY 4.0</span>
+        <h3>Industry 4.0 Readiness</h3>
+        <p>Assessment of organisational maturity against the fourth industrial revolution — identifying gaps, priorities and investment pathways.</p>
+      </div>
+
+      <div class="service-card reveal d2">
+        <span class="service-num">03 / AI &amp; AGENTIC</span>
+        <h3>AI &amp; Agentic System Implementation</h3>
+        <p>Design, deployment and integration of AI models and agentic architectures adapted to the operational reality of the business.</p>
+      </div>
+
+      <div class="service-card reveal d3">
+        <span class="service-num">04 / ETHICS</span>
+        <h3>Digital Ethics &amp; Governance</h3>
+        <p>Responsible AI deployment, bias awareness, governance frameworks and a clear understanding of the digital revolution's human impact.</p>
+      </div>
+
+      <div class="service-card reveal d4">
+        <span class="service-num">05 / LLM DEPLOYMENT</span>
+        <h3>AI Tools — Installation &amp; Support</h3>
+        <p>Selection, installation and configuration of large language models and AI tools, tailored to the organisation's workflows and constraints.</p>
+      </div>
+
+      <div class="service-card reveal d5">
+        <span class="service-num">06 / CONTINUOUS SUPPORT</span>
+        <h3>Model Updates &amp; Technical Support</h3>
+        <p>Ongoing maintenance, model updates and technical support as the AI landscape evolves — keeping systems current, secure and effective.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-num">07 / FORMATION</span>
+        <h3>Employee &amp; Executive Formation</h3>
+        <p>Structured training programmes for staff and leadership — from foundational AI literacy to advanced operational use of new tools.</p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <span class="service-num">08 / CYBERSECURITY</span>
+        <h3>Cybersecurity Fundamentals</h3>
+        <p>Practical courses on safe digital behaviours, threat awareness and the right vocabulary — building a security-conscious culture across the organisation.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1107,14 +1391,100 @@ footer a:hover{color:var(--magenta)}
 
     <div class="gallery-grid single">
       <figure class="gallery-item reveal d2">
-        <img src="https://i.ibb.co/zWpBFP1Z/photo-2026-09-16-11-32-19-2.jpg"
-             alt="Jonathan Roche in Phnom Penh, Cambodia"
+        <img src="https://i.ibb.co/RpPqV48b/photo-2026-09-16-11-32-19.jpg"
+             alt="Jonathan Roche in front of the Royal Palace, Phnom Penh, Cambodia"
              loading="lazy" />
         <figcaption>
           <span class="gallery-loc">Phnom Penh, Cambodia</span>
-          <span class="gallery-desc">Professional presence in the Kingdom of Cambodia.</span>
+          <span class="gallery-desc">Based in the Kingdom of Cambodia — advising businesses across Southeast Asia and beyond.</span>
         </figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section id="packages">
+  <div class="wrap">
+    <div class="eyebrow reveal">Engagement Packages</div>
+    <h2 class="title reveal d1">Three tiers,<br><em>one clear path forward.</em></h2>
+    <p class="lead reveal d2">
+      Each package will be delivered as <strong> a
+      <strong>full implementation</strong> including installation, testing, formation and
+      continuous support. All engagements are scoped to the size and complexity of the organisation.
+    </p>
+
+    <div class="pricing-grid">
+      <!-- PACKAGE 1 -->
+      <div class="price-card reveal">
+        <span class="price-num">PACKAGE 01</span>
+        <h3>Diagnostic &amp; Strategic Advisory</h3>
+        <div class="price-amount">$300<small>/ hour</small></div>
+        <p class="price-desc">
+          A purely advisory engagement. Comprehensive commentary on the organisation —
+          strengths, weaknesses and vulnerabilities — with clear recommendations on what
+          should change to be more effective and more secure.
+        </p>
+        <ul class="price-list">
+          <li>Full organisational review </li>
+          <li>Identification of critical vulnerabilities</li>
+          <li>Priority recommendations for improvement</li>
+          <li>Risk &amp; opportunity analysis</li>
+          <li>Executive summary &amp; roadmap outline</li>
+          <li>Written report and executive briefing</li>
+        </ul>
+        <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry%20—%20Package%2001" class="price-cta">Request Package</a>
+      </div>
+
+      <!-- PACKAGE 2 -->
+      <div class="price-card reveal d1">
+        <span class="price-num">PACKAGE 02</span>
+        <h3>Digital Transformation &amp; Infrastructure Review</h3>
+        <div class="price-amount">$500<small>/ hour</small></div>
+        <p class="price-desc">
+          A complete review of the organisation's technical foundation — servers, computers,
+          networks and systems — with a safety and resilience assessment, and a structured
+          roadmap for successful digital transformation.
+        </p>
+        <ul class="price-list">
+          <li>Full review of servers, computers and systems</li>
+          <li>Cybersecurity posture assessment</li>
+          <li>Data protection &amp; access control review</li>
+          <li>Digital transformation roadmap</li>
+          <li>Industry 4.0 readiness report</li>
+          <li>Implementation priorities &amp; cost outline</li>
+        </ul>
+        <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry%20—%20Package%2002" class="price-cta">Request Package</a>
+      </div>
+
+      <!-- PACKAGE 3 — FEATURED -->
+      <div class="price-card featured reveal d2">
+        <span class="price-num">PACKAGE 03</span>
+        <h3>Complete Implementation &amp; Enablement</h3>
+        <div class="price-amount">$700<small>/ hour</small></div>
+        <p class="price-desc">
+          End-to-end deployment. Complete infrastructure security, AI and agentic system
+          implementation, installation, testing, formation and continuous support.
+          The flagship engagement for organisations ready to fully transform.
+        </p>
+        <ul class="price-list">
+          <li>Complete infrastructure security hardening</li>
+          <li>LLM &amp; AI tool installation and configuration</li>
+          <li>Agentic system design and deployment</li>
+          <li>Full testing &amp; validation</li>
+          <li>Employee &amp; executive formation programmes</li>
+          <li>Cybersecurity safe-behaviour course</li>
+          <li>Continuous model updates &amp; technical support</li>
+        </ul>
+        <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry%20—%20Package%2003" class="price-cta">Request Package</a>
+      </div>
+    </div>
+
+    <div class="pricing-note reveal d3">
+      <strong>Flexible delivery.</strong> Packages are available as <strong>theory-only advisory</strong>
+      or as a <strong>complete implementation</strong> — including installation, testing, formation and
+      ongoing support. Engagements can be delivered on an hourly, retainer or project basis, and are
+      tailored to the size and sector of the organisation, from small businesses to large enterprise.
     </div>
   </div>
 </section>
@@ -1122,8 +1492,8 @@ footer a:hover{color:var(--magenta)}
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience">
   <div class="wrap">
-    <div class="eyebrow reveal">Career Timeline</div>
-    <h2 class="title reveal d1">A track record built on <em>pressure, precision &amp; trust.</em></h2>
+    <div class="eyebrow reveal">Professional Background</div>
+    <h2 class="title reveal d1">A foundation built on <em>operational leadership &amp; trust.</em></h2>
 
     <div class="timeline" id="timeline">
       <div class="tl-line"><div class="tl-fill" id="tlFill"></div></div>
@@ -1131,14 +1501,14 @@ footer a:hover{color:var(--magenta)}
       <article class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">2020 — 2026</span>
-          <h3>Emerging Technology &amp; Digital Risk</h3>
-          <h4>Self-Directed Mastery · Remote / Phnom Penh</h4>
-          <p>Six years of focused study and applied practice across Prompt Engineering, AI Ethics, Cybersecurity, Blockchain &amp; Digital Assets, Social Engineering and Agentic Systems. Combining physical security expertise with digital literacy to address human risk, operational resilience and intelligent automation.</p>
+          <span class="tl-date">2020 — Present</span>
+          <h3>Independent Consultant</h3>
+          <h4>Digital Transformation &amp; Emerging Technology · Phnom Penh &amp; Remote</h4>
+          <p>Advising businesses of every size on digital transformation, Industry 4.0 readiness, AI and agentic system implementation, digital ethics, and cybersecurity fundamentals. Delivering strategic advisory and hands-on deployment — from diagnostic review through to installation, formation and continuous technical support.</p>
           <div class="chips">
-            <span class="chip">Prompt Engineering</span><span class="chip">AI Ethics</span>
-            <span class="chip">Agentic Systems</span><span class="chip">Blockchain</span>
-            <span class="chip">Cybersecurity</span><span class="chip">Social Engineering</span>
+            <span class="chip">Digital Transformation</span><span class="chip">AI &amp; Agentic</span>
+            <span class="chip">Cybersecurity</span><span class="chip">Formation</span>
+            <span class="chip">AI Ethics</span>
           </div>
         </div>
       </article>
@@ -1146,12 +1516,26 @@ footer a:hover{color:var(--magenta)}
       <article class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">2015 — 2016</span>
+          <span class="tl-date">2018 — 2019</span>
+          <h3>Security Agent</h3>
+          <h4>Ying Huang Casino · Sihanoukville, Cambodia</h4>
+          <p>Monitored gaming floors, restricted areas and sensitive casino operations. Managed access control for VIP and restricted zones, supported incident prevention and conflict management, and produced detailed security reports in English for management.</p>
+          <div class="chips">
+            <span class="chip">Access Control</span><span class="chip">VIP Zones</span>
+            <span class="chip">Incident Prevention</span><span class="chip">Reporting</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2017 — 2018</span>
           <h3>Hotel Manager / Operations Manager</h3>
           <h4>Golden Boat Hotel · Phnom Penh, Cambodia</h4>
           <p>Managed approximately 20 employees across reception, housekeeping and security. Oversaw staff scheduling, day-to-day operations and service quality, managed budgets and operational requirements, and maintained relationships with international and VIP guests while coordinating security, customer service and facility operations.</p>
           <div class="chips">
-            <span class="chip">70 Staff</span><span class="chip">Budget Oversight</span>
+            <span class="chip">20 Staff</span><span class="chip">Budget Oversight</span>
             <span class="chip">Service Quality</span><span class="chip">VIP Relations</span>
           </div>
         </div>
@@ -1160,7 +1544,7 @@ footer a:hover{color:var(--magenta)}
       <article class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">2014 — 2015</span>
+          <span class="tl-date">2015 — 2017</span>
           <h3>Director &amp; General Manager</h3>
           <h4>Loby Nightclub · Phnom Penh, Cambodia</h4>
           <p>Managed overall nightclub operations including staff, security, customer relations and administration. Supervised security procedures and crowd-management protocols, led multicultural teams in a high-pressure nightlife environment, and handled incidents, conflict resolution and operational decision-making.</p>
@@ -1175,7 +1559,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2010 — 2013</span>
-          <h3>Head of Security Agent / Bodyguard</h3>
+          <h3>Security Agent / Close Protection</h3>
           <h4>Louis Vuitton · Saint-Tropez, France</h4>
           <p>Protected luxury merchandise and high-value assets in one of Europe's most prestigious destinations. Managed client access, supported VIP customer environments, and conducted loss-prevention and security monitoring in a luxury retail setting. Worldwide close-protection experience in demanding environments.</p>
           <div class="chips">
@@ -1189,7 +1573,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2010</span>
-          <h3>Security Agent / Bodyguard</h3>
+          <h3>Security Agent / Close Protection</h3>
           <h4>Le Quai · Saint-Tropez, France</h4>
           <p>Provided security for a high-end nightlife establishment. Managed entrance control, crowd behaviour and conflict prevention, responding to alcohol-related incidents and challenging customer situations.</p>
           <div class="chips">
@@ -1202,7 +1586,7 @@ footer a:hover{color:var(--magenta)}
       <article class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">2009</span>
+          <span class="tl-date">2010</span>
           <h3>Security Agent</h3>
           <h4>Dior · Saint-Tropez, France</h4>
           <p>Managed store access and customer monitoring. Supported theft prevention and protection of high-value merchandise in a luxury boutique environment.</p>
@@ -1256,8 +1640,8 @@ footer a:hover{color:var(--magenta)}
 <!-- ============ SKILLS ============ -->
 <section id="skills">
   <div class="wrap">
-    <div class="eyebrow reveal">Capabilities</div>
-    <h2 class="title reveal d1">Systems, teams and <em>situations under control.</em></h2>
+    <div class="eyebrow reveal">Consulting Competencies</div>
+    <h2 class="title reveal d1">Depth across technology,<br><em>security and leadership.</em></h2>
 
     <div class="skill-grid">
       <div class="skill-card reveal">
@@ -1282,24 +1666,22 @@ footer a:hover{color:var(--magenta)}
       </div>
 
       <div class="skill-card reveal d2">
-        <span class="skill-num">03 / SECURITY</span>
-        <h3><i></i>Physical Security &amp; Risk Management</h3>
+        <span class="skill-num">03 / ADVISORY</span>
+        <h3><i></i>Strategy, Governance &amp; Formation</h3>
         <div class="skill-tags">
-          <span class="tag">Close Protection</span><span class="tag">Bodyguard Services</span>
-          <span class="tag">VIP Protection</span><span class="tag">Loss Prevention</span>
-          <span class="tag">CCTV</span><span class="tag">Incident Prevention</span>
-          <span class="tag">Conflict Management</span><span class="tag">Crowd Management</span>
+          <span class="tag">Digital Transformation</span><span class="tag">Industry 4.0 Readiness</span>
+          <span class="tag">AI Governance</span><span class="tag">Executive Formation</span>
+          <span class="tag">Employee Training</span><span class="tag">Change Management</span>
         </div>
       </div>
 
       <div class="skill-card reveal d3">
         <span class="skill-num">04 / OPERATIONS</span>
-        <h3><i></i>Operations, Hospitality &amp; Leadership</h3>
+        <h3><i></i>Operations, Security &amp; Leadership</h3>
         <div class="skill-tags">
-          <span class="tag">Team Leadership</span><span class="tag">Staff Scheduling</span>
-          <span class="tag">Budget Oversight</span><span class="tag">VIP Guest Relations</span>
-          <span class="tag">Luxury Service Standards</span><span class="tag">Crisis Management</span>
-          <span class="tag">International Clientele</span>
+          <span class="tag">Team Leadership</span><span class="tag">Close Protection</span>
+          <span class="tag">VIP Protection</span><span class="tag">Crisis Management</span>
+          <span class="tag">Luxury Service Standards</span><span class="tag">International Clientele</span>
         </div>
       </div>
     </div>
@@ -1338,14 +1720,14 @@ footer a:hover{color:var(--magenta)}
     <!-- TECH MARQUEE -->
     <div class="marquee">
       <div class="marquee-track" id="marquee">
+        <span>Digital Transformation</span><span>◆</span>
+        <span>Industry 4.0</span><span>◆</span>
+        <span>AI &amp; Agentic Systems</span><span>◆</span>
         <span>Prompt Engineering</span><span>◆</span>
         <span>AI Ethics</span><span>◆</span>
-        <span>Agentic Systems</span><span>◆</span>
         <span>Cybersecurity</span><span>◆</span>
         <span>Blockchain</span><span>◆</span>
-        <span>Social Engineering</span><span>◆</span>
-        <span>Digital Assets</span><span>◆</span>
-        <span>Emerging Technology</span><span>◆</span>
+        <span>LLM Deployment</span><span>◆</span>
       </div>
     </div>
   </div>
@@ -1355,14 +1737,15 @@ footer a:hover{color:var(--magenta)}
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="eyebrow reveal">Contact</div>
-    <h2 class="reveal d1">Let's build something<br><em>exceptional.</em></h2>
+    <h2 class="reveal d1">Your transformation<br><em>starts here.</em></h2>
     <p class="lead reveal d2" style="text-align:center;margin-left:auto;margin-right:auto">
-      Available immediately for operations, security and emerging technology leadership roles across
-      Cambodia, Southeast Asia and internationally.
+      Available immediately for consulting engagements across Cambodia, Southeast Asia and
+      internationally. Small, medium and large organisations welcome. Let's discuss how your
+      business can move confidently into the digital era.
     </p>
 
     <div class="cta-row reveal d3" style="justify-content:center">
-      <a href="mailto:joe.agentic@gmail.com" class="btn solid"><span>Send an Email</span><span class="arrow">→</span></a>
+      <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry" class="btn solid"><span>Request a Consultation</span><span class="arrow">→</span></a>
       <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="btn"><span>Message on Telegram</span><span class="arrow">→</span></a>
     </div>
 
@@ -1387,7 +1770,7 @@ footer a:hover{color:var(--magenta)}
 
 <footer>
   <span>© <span id="year"></span> Jonathan Victor Alexandre Roche</span>
-  <span>Operations · Security · Emerging Tech</span>
+  <span>Digital Transformation · AI · Cybersecurity Consulting</span>
   <div class="footer-links">
     <a href="mailto:joe.agentic@gmail.com">joe.agentic@gmail.com</a>
     <span>·</span>
@@ -1541,7 +1924,7 @@ footer a:hover{color:var(--magenta)}
     requestAnimationFrame(loop);
   })();
 
-  const hot = document.querySelectorAll('a, button, .tl-card, .skill-card, .mini, .lang, .pillar, .tag, .chip, .gallery-item');
+  const hot = document.querySelectorAll('a, button, .tl-card, .skill-card, .mini, .lang, .pillar, .tag, .chip, .gallery-item, .service-card, .price-card');
   hot.forEach(el=>{
     el.addEventListener('mouseenter', ()=>ring.classList.add('hot'));
     el.addEventListener('mouseleave', ()=>ring.classList.remove('hot'));
@@ -1555,11 +1938,11 @@ footer a:hover{color:var(--magenta)}
   const el = document.getElementById('typed');
   if(!el) return;
   const roles = [
-    'Operations & Security Leader',
-    'Emerging Tech Specialist',
-    'AI Ethicist & Prompt Engineer',
-    'Close Protection Professional',
-    'Blockchain & Cybersecurity'
+    'Digital Transformation Advisor',
+    'AI & Agentic Systems Consultant',
+    'Cybersecurity & Digital Ethics',
+    'Industry 4.0 Readiness',
+    'LLM Deployment & Formation'
   ];
   let ri = 0, ci = 0, deleting = false;
 
