@@ -196,6 +196,7 @@ main,header,footer{position:relative;z-index:3}
   display:none;background:none;border:1px solid var(--line);
   width:44px;height:44px;border-radius:11px;cursor:pointer;
   position:relative;
+  z-index:901;
 }
 .burger i{
   position:absolute;left:12px;right:12px;height:1.5px;background:var(--cyan);
@@ -221,14 +222,30 @@ main,header,footer{position:relative;z-index:3}
 @media(max-width:880px){
   .burger{display:block}
   .nav-links{
-    position:fixed;inset:0;background:rgba(4,5,10,.96);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(4,5,10,.96);
     backdrop-filter:blur(24px);
-    flex-direction:column;justify-content:center;gap:30px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    padding-top:80px;
+    padding-bottom:40px;
     clip-path:circle(0% at 92% 5%);
     transition:clip-path .7s var(--ease);
+    z-index:899;
   }
-  .nav-links.open{clip-path:circle(150% at 92% 5%)}
-  .nav-links a{font-size:1rem;letter-spacing:.28em}
+  .nav-links.open{
+    clip-path:circle(150% at 92% 5%);
+  }
+  .nav-links a{
+    font-size:1.1rem;
+    letter-spacing:.28em;
+  }
 }
 
 /* ============================
@@ -528,8 +545,21 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   color:var(--text);
   line-height:1.5;
 }
+/* Single-image gallery */
+.gallery-grid.single{
+  grid-template-columns:1fr;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.gallery-grid.single .gallery-item img{
+  height:520px;
+  object-position:center 20%;
+}
 @media(max-width:600px){
-  .gallery-item img{height:340px}
+  .gallery-grid.single .gallery-item img{
+    height:380px;
+  }
 }
 
 /* ============================
@@ -904,7 +934,7 @@ footer a:hover{color:var(--magenta)}
           budgets, service quality and international/VIP guest relations.
         </p>
         <p class="lead reveal d2" style="margin-top:18px">
-          I also served as <strong>General Manager of a Phnom Penh nightlife venue</strong>, managing staff,
+          I also served as <strong>Director & General Manager of a Phnom Penh nightlife venue</strong>, managing staff,
           security, administration and customer operations. Fluent in French and English with professional
           working Mandarin Chinese, I have long-term familiarity with multicultural working environments
           across Greater China and Southeast Asia.
@@ -954,26 +984,15 @@ footer a:hover{color:var(--magenta)}
     <div class="eyebrow reveal">Visual Profile</div>
     <h2 class="title reveal d1">In the field, <em>on the ground.</em></h2>
 
-    <div class="gallery-grid">
-      <!-- Photo 1 — Royal Palace, Phnom Penh -->
+    <div class="gallery-grid single">
+      <!-- Photo — Royal Palace, Phnom Penh -->
       <figure class="gallery-item reveal d2">
-        <img src="royal-palace.jpg"
+        <img src="https://i.ibb.co/RpPqV48b/photo-2026-09-16-11-32-19.jpg"
              alt="Jonathan Roche in front of the Royal Palace, Phnom Penh, Cambodia"
              loading="lazy" />
         <figcaption>
           <span class="gallery-loc">Phnom Penh, Cambodia</span>
           <span class="gallery-desc">Royal Palace — professional presence in the Kingdom of Cambodia.</span>
-        </figcaption>
-      </figure>
-
-      <!-- Photo 2 — Dior, Saint-Tropez -->
-      <figure class="gallery-item reveal d3">
-        <img src="dior-saint-tropez.jpg"
-             alt="Jonathan Roche at the Dior boutique, Saint-Tropez, France"
-             loading="lazy" />
-        <figcaption>
-          <span class="gallery-loc">Saint-Tropez, France</span>
-          <span class="gallery-desc">Dior — luxury retail security &amp; VIP environment experience.</span>
         </figcaption>
       </figure>
     </div>
@@ -1007,7 +1026,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2017 — 2018</span>
-          <h3>Hotel Director / Operations Manager</h3>
+          <h3>Hotel Manager / Operations Manager</h3>
           <h4>Golden Boat Hotel · Phnom Penh, Cambodia</h4>
           <p>Managed approximately 20 employees across reception, housekeeping and security. Oversaw staff scheduling, day-to-day operations and service quality, managed budgets and operational requirements, and maintained relationships with international and VIP guests while coordinating security, customer service and facility operations.</p>
           <div class="chips">
@@ -1021,7 +1040,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2015 — 2017</span>
-          <h3>General Manager</h3>
+          <h3>General Director</h3>
           <h4>Loby Nightclub · Phnom Penh, Cambodia</h4>
           <p>Managed overall nightclub operations including staff, security, customer relations and administration. Supervised security procedures and crowd-management protocols, led multicultural teams in a high-pressure nightlife environment, and handled incidents, conflict resolution and operational decision-making.</p>
           <div class="chips">
@@ -1035,7 +1054,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2010 — 2013</span>
-          <h3>Security Agent</h3>
+          <h3>Head of Security</h3>
           <h4>Louis Vuitton · Saint-Tropez, France</h4>
           <p>Protected luxury merchandise and high-value assets. Managed client access and supported VIP customer environments, conducting loss-prevention and security monitoring in a luxury retail setting.</p>
           <div class="chips">
