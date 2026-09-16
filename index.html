@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jonathan Victor Alexandre Roche — Operations · Security · Hospitality</title>
+<title>Jonathan Victor Alexandre Roche — Operations · Security · Emerging Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -465,6 +465,7 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
 .info-row span:first-child{
   font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--muted);
+  flex:0 0 auto;
 }
 .info-row span:last-child{text-align:right;color:var(--text)}
 
@@ -836,16 +837,13 @@ footer a:hover{color:var(--magenta)}
    MOBILE RESPONSIVE FIXES
    ============================ */
 @media(max-width:600px){
-  /* --- HERO SECTION RECENTERING --- */
   .hero{
     padding-top:110px;
     padding-bottom:60px;
     min-height:auto;
     text-align:left;
   }
-  .hero .wrap{
-    width:100%;
-  }
+  .hero .wrap{width:100%}
   .status-pill{
     font-size:.58rem;
     letter-spacing:.12em;
@@ -855,32 +853,22 @@ footer a:hover{color:var(--magenta)}
     white-space:normal;
     line-height:1.4;
   }
-  .status-pill .dot{
-    flex:0 0 auto;
-  }
-
-  /* --- HERO TITLE --- */
+  .status-pill .dot{flex:0 0 auto}
   .hero h1{
     font-size:clamp(2.1rem,12vw,3.2rem);
     line-height:.95;
     margin-bottom:20px;
   }
-
-  /* --- ROLE LINE --- */
   .hero .role-line{
     font-size:.72rem;
     letter-spacing:.1em;
     margin-bottom:20px;
     min-height:2.4em;
   }
-
-  /* --- SUMMARY --- */
   .hero p.summary{
     font-size:.9rem;
     margin-bottom:30px;
   }
-
-  /* --- CTA BUTTONS: FULL-WIDTH, STACKED --- */
   .cta-row{
     flex-direction:column;
     align-items:stretch;
@@ -896,77 +884,28 @@ footer a:hover{color:var(--magenta)}
     letter-spacing:.14em;
     box-sizing:border-box;
   }
-  .cta-row .btn span{
-    white-space:nowrap;
-  }
-  .cta-row .btn .arrow{
-    margin-left:6px;
-  }
-
-  /* --- HERO STATS: 2x2 GRID --- */
+  .cta-row .btn span{white-space:nowrap}
+  .cta-row .btn .arrow{margin-left:6px}
   .hero-stats{
     grid-template-columns:repeat(2,1fr);
     gap:20px 12px;
     padding-top:28px;
     max-width:100%;
   }
-  .hstat{
-    padding-right:0;
-  }
-  .hstat b{
-    font-size:1.65rem;
-  }
-  .hstat small{
-    font-size:.58rem;
-    letter-spacing:.14em;
-  }
-
-  /* --- SCROLL CUE HIDDEN ON MOBILE --- */
-  .scroll-cue{
-    display:none;
-  }
-
-  /* --- SECTION PADDING --- */
-  section{
-    padding-left:18px;
-    padding-right:18px;
-  }
-
-  /* --- HEADINGS --- */
-  h2.title{
-    font-size:clamp(1.7rem,7.5vw,2.4rem);
-    line-height:1.1;
-  }
-  .eyebrow{
-    font-size:.62rem;
-    letter-spacing:.3em;
-  }
-
-  /* --- GALLERY --- */
-  .gallery-grid.single{
-    max-width:100%;
-    margin-top:36px;
-  }
-  .gallery-grid.single .gallery-item img{
-    height:420px;
-  }
-  .gallery-item figcaption{
-    padding:20px 18px 18px;
-  }
-  .gallery-desc{
-    font-size:.82rem;
-  }
-
-  /* --- CONTACT SECTION --- */
-  .contact h2{
-    font-size:clamp(1.9rem,9vw,3rem);
-  }
-  .contact .cta-row{
-    width:100%;
-  }
-  .contact .cta-row .btn{
-    width:100%;
-  }
+  .hstat{padding-right:0}
+  .hstat b{font-size:1.65rem}
+  .hstat small{font-size:.58rem;letter-spacing:.14em}
+  .scroll-cue{display:none}
+  section{padding-left:18px;padding-right:18px}
+  h2.title{font-size:clamp(1.7rem,7.5vw,2.4rem);line-height:1.1}
+  .eyebrow{font-size:.62rem;letter-spacing:.3em}
+  .gallery-grid.single{max-width:100%;margin-top:36px}
+  .gallery-grid.single .gallery-item img{height:420px}
+  .gallery-item figcaption{padding:20px 18px 18px}
+  .gallery-desc{font-size:.82rem}
+  .contact h2{font-size:clamp(1.9rem,9vw,3rem)}
+  .contact .cta-row{width:100%}
+  .contact .cta-row .btn{width:100%}
   .meta-chip{
     font-size:.58rem;
     padding:9px 14px;
@@ -974,8 +913,6 @@ footer a:hover{color:var(--magenta)}
     word-break:break-word;
     max-width:100%;
   }
-
-  /* --- FOOTER --- */
   footer{
     flex-direction:column;
     align-items:flex-start;
@@ -987,40 +924,22 @@ footer a:hover{color:var(--magenta)}
     justify-content:flex-start;
     word-break:break-word;
   }
+  .info-row{flex-direction:column;gap:4px;align-items:flex-start}
+  .info-row span:last-child{text-align:left}
 }
 
-/* --- Extra small devices --- */
 @media(max-width:380px){
-  .hero h1{
-    font-size:clamp(1.8rem,11vw,2.6rem);
-  }
-  .cta-row .btn{
-    padding:13px 16px;
-    font-size:.64rem;
-  }
-  .hero-stats{
-    grid-template-columns:1fr 1fr;
-  }
-  .hstat b{
-    font-size:1.4rem;
-  }
-  .gallery-grid.single .gallery-item img{
-    height:340px;
-  }
+  .hero h1{font-size:clamp(1.8rem,11vw,2.6rem)}
+  .cta-row .btn{padding:13px 16px;font-size:.64rem}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hstat b{font-size:1.4rem}
+  .gallery-grid.single .gallery-item img{height:340px}
 }
 
-/* --- Tablet refinements --- */
 @media(min-width:601px) and (max-width:880px){
-  .cta-row{
-    gap:14px;
-  }
-  .cta-row .btn{
-    padding:14px 24px;
-    font-size:.7rem;
-  }
-  .gallery-grid.single .gallery-item img{
-    height:480px;
-  }
+  .cta-row{gap:14px}
+  .cta-row .btn{padding:14px 24px;font-size:.7rem}
+  .gallery-grid.single .gallery-item img{height:480px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -1088,9 +1007,10 @@ footer a:hover{color:var(--magenta)}
     <div class="role-line"><span id="typed"></span><span class="cursor"></span></div>
 
     <p class="summary">
-      More than <strong>20 years of international experience</strong> across IT, hospitality, operations,
-      security and luxury/VIP environments Worldwide — leading teams,
-      protecting high-value assets and delivering elite service standards in high-pressure settings.
+      Operations &amp; security leader with <strong>25+ years</strong> across hospitality, luxury retail,
+      VIP protection and close protection worldwide — now specialised in
+      <strong>emerging technology</strong>: prompt engineering, AI ethics, cybersecurity, blockchain,
+      social engineering and agentic systems.
     </p>
 
     <div class="cta-row">
@@ -1099,9 +1019,9 @@ footer a:hover{color:var(--magenta)}
     </div>
 
     <div class="hero-stats">
-      <div class="hstat reveal"><b data-count="20" data-suffix="+">0</b><small>Years Experience</small></div>
+      <div class="hstat reveal"><b data-count="25" data-suffix="+">0</b><small>Years Experience</small></div>
       <div class="hstat reveal d1"><b data-count="70" data-suffix="+">0</b><small>Team Members Led</small></div>
-      <div class="hstat reveal d2"><b data-count="42" data-suffix="">0</b><small>Countries</small></div>
+      <div class="hstat reveal d2"><b data-count="6" data-suffix="">0</b><small>Years in Emerging Tech</small></div>
       <div class="hstat reveal d3"><b data-count="3" data-suffix="">0</b><small>Languages</small></div>
     </div>
   </div>
@@ -1114,49 +1034,51 @@ footer a:hover{color:var(--magenta)}
   <div class="wrap">
     <div class="about-grid">
       <div>
-                <div class="eyebrow reveal">Profile</div>
-        <h2 class="title reveal d1">International operations,<br><em>security &amp; hospitality.</em></h2>
+        <div class="eyebrow reveal">Profile</div>
+        <h2 class="title reveal d1">Operations &amp; security leader,<br><em>specialised in emerging technology.</em></h2>
         <p class="lead reveal d2">
-          As <strong>Hotel Manager</strong> in Phnom Penh, I managed approximately
-          <strong>20 employees</strong> across reception, housekeeping and security — overseeing scheduling,
-          budgets, service quality and international/VIP guest relations. I also served as
-          <strong>Director &amp; General Manager of a Phnom Penh nightlife venue</strong>, managing staff,
-          security, administration and customer operations.
+          Beyond 25+ years in international operations, hospitality and physical security — including
+          <strong>Hotel Manager</strong> in Phnom Penh overseeing <strong>20 employees</strong> and
+          <strong>Director &amp; General Manager</strong> of a Phnom Penh nightlife venue — my core focus
+          since 2020 has been the mastery of <strong>emerging technology and digital risk</strong>.
         </p>
         <p class="lead reveal d2" style="margin-top:18px">
-          Across more than 15 years I have worked as a <strong>close protection and bodyguard professional
-          worldwide</strong> — safeguarding VIPs, executives and high-net-worth clients in demanding
-          environments. My career includes extensive experience in <strong>Saint-Tropez</strong>, protecting
-          luxury assets and clientele for <strong>Louis Vuitton, Dior</strong> and high-end nightlife venues,
-          where discretion, situational awareness and calm under pressure are non-negotiable.
+          From <strong>2020 to 2026</strong> I have dedicated myself to deepening expertise in
+          <strong>Prompt Engineering</strong>, <strong>AI Ethics</strong>, <strong>Cybersecurity</strong>,
+          <strong>Blockchain &amp; Digital Assets</strong>, <strong>Social Engineering</strong> and
+          <strong>Agentic Systems</strong>. This blend of physical security and digital literacy allows me
+          to operate at the intersection of human risk, operational resilience and intelligent automation.
         </p>
         <p class="lead reveal d2" style="margin-top:18px">
-          Alongside physical security, I bring strong <strong>IT and cybersecurity</strong> capabilities —
-          covering threat awareness, digital asset protection, access control systems and emerging
-          technology research. Fluent in French and English with professional working Mandarin Chinese,
-          I operate confidently across multicultural environments in Greater China and Southeast Asia.
+          As an <strong>AI ethicist</strong>, I focus on responsible deployment, bias awareness and the
+          human impact of automated systems. As a <strong>security professional</strong> with worldwide
+          bodyguard and close-protection experience — including <strong>Saint-Tropez</strong> with
+          <strong>Louis Vuitton</strong> and <strong>Dior</strong> — I bring situational awareness,
+          discretion and calm under pressure to every environment. Fluent in French and English with
+          professional working Mandarin Chinese, I thrive in multicultural settings across Greater China
+          and Southeast Asia.
         </p>
 
         <div class="pillars">
           <div class="pillar reveal d3">
             <i>◈</i>
             <div>
-              <h4>Operations Leadership</h4>
-              <p>Team leadership, staff scheduling, budget oversight, operational procedures and crisis management.</p>
+              <h4>Emerging Technology &amp; AI</h4>
+              <p>Prompt engineering, AI ethics, agentic systems, blockchain, digital assets and emerging tech research.</p>
             </div>
           </div>
           <div class="pillar reveal d4">
             <i>◆</i>
             <div>
-              <h4>Security &amp; Risk Management</h4>
-              <p>Physical security, VIP protection environments, loss prevention, CCTV, access control, crowd management.</p>
+              <h4>Physical Security &amp; Close Protection</h4>
+              <p>Worldwide bodyguard services, VIP protection, loss prevention, crowd management and conflict resolution.</p>
             </div>
           </div>
           <div class="pillar reveal d5">
             <i>◇</i>
             <div>
-              <h4>Luxury &amp; VIP Hospitality</h4>
-              <p>VIP guest relations, luxury service standards, entertainment management, international clientele.</p>
+              <h4>Operations &amp; Hospitality Leadership</h4>
+              <p>Team leadership, budget oversight, VIP guest relations and luxury service standards.</p>
             </div>
           </div>
         </div>
@@ -1169,7 +1091,9 @@ footer a:hover{color:var(--magenta)}
         <div class="info-row"><span>Availability</span><span>Immediate</span></div>
         <div class="info-row"><span>Mobility</span><span>Cambodia · SEA · International</span></div>
         <div class="info-row"><span>Languages</span><span>FR · EN · 中文</span></div>
-        <div class="info-row"><span>Focus</span><span>Operations · Security · VIP</span></div>
+        <div class="info-row"><span>Core Focus</span><span>AI · Cyber · Blockchain</span></div>
+        <div class="info-row"><span>Specialty</span><span>Prompt Eng · AI Ethics · Agentic</span></div>
+        <div class="info-row"><span>Security</span><span>Close Protection · VIP</span></div>
       </aside>
     </div>
   </div>
@@ -1182,14 +1106,13 @@ footer a:hover{color:var(--magenta)}
     <h2 class="title reveal d1">In the field, <em>on the ground.</em></h2>
 
     <div class="gallery-grid single">
-      <!-- Photo — Royal Palace, Phnom Penh -->
       <figure class="gallery-item reveal d2">
         <img src="https://i.ibb.co/zWpBFP1Z/photo-2026-09-16-11-32-19-2.jpg"
-             alt="Jonathan Roche in front of the Royal Palace, Phnom Penh, Cambodia"
+             alt="Jonathan Roche in Phnom Penh, Cambodia"
              loading="lazy" />
         <figcaption>
           <span class="gallery-loc">Phnom Penh, Cambodia</span>
-          <span class="gallery-desc">Royal Palace — professional presence in the Kingdom of Cambodia.</span>
+          <span class="gallery-desc">Professional presence in the Kingdom of Cambodia.</span>
         </figcaption>
       </figure>
     </div>
@@ -1204,17 +1127,18 @@ footer a:hover{color:var(--magenta)}
 
     <div class="timeline" id="timeline">
       <div class="tl-line"><div class="tl-fill" id="tlFill"></div></div>
-	  
+
       <article class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">2017 — 2018</span>
-          <h3>Protection Officer</h3>
-          <h4>Manila - Hong Kong - Bangkok - Lagos·- Phnom Penh - Sihanoukville</h4>
-          <p>Ensures the physical safety and privacy of high-profile individuals.Escorting the client on their day-to-day activities.</p>
+          <span class="tl-date">2020 — 2026</span>
+          <h3>Emerging Technology &amp; Digital Risk</h3>
+          <h4>Self-Directed Mastery · Remote / Phnom Penh</h4>
+          <p>Six years of focused study and applied practice across Prompt Engineering, AI Ethics, Cybersecurity, Blockchain &amp; Digital Assets, Social Engineering and Agentic Systems. Combining physical security expertise with digital literacy to address human risk, operational resilience and intelligent automation.</p>
           <div class="chips">
-            <span class="chip">Protection Specialists</span><span class="chip"></span>
-            <span class="chip">Protect from potential threats to their safety</span><span class="chip">Threat Assessmen</span>
+            <span class="chip">Prompt Engineering</span><span class="chip">AI Ethics</span>
+            <span class="chip">Agentic Systems</span><span class="chip">Blockchain</span>
+            <span class="chip">Cybersecurity</span><span class="chip">Social Engineering</span>
           </div>
         </div>
       </article>
@@ -1222,8 +1146,8 @@ footer a:hover{color:var(--magenta)}
       <article class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">2017 — 2018</span>
-          <h3>General Manager - Co-owner</h3>
+          <span class="tl-date">2015 — 2016</span>
+          <h3>Hotel Manager / Operations Manager</h3>
           <h4>Golden Boat Hotel · Phnom Penh, Cambodia</h4>
           <p>Managed approximately 20 employees across reception, housekeeping and security. Oversaw staff scheduling, day-to-day operations and service quality, managed budgets and operational requirements, and maintained relationships with international and VIP guests while coordinating security, customer service and facility operations.</p>
           <div class="chips">
@@ -1236,8 +1160,8 @@ footer a:hover{color:var(--magenta)}
       <article class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <span class="tl-date">2015 — 2017</span>
-          <h3>Director - General Manager</h3>
+          <span class="tl-date">2014 — 2015</span>
+          <h3>Director &amp; General Manager</h3>
           <h4>Loby Nightclub · Phnom Penh, Cambodia</h4>
           <p>Managed overall nightclub operations including staff, security, customer relations and administration. Supervised security procedures and crowd-management protocols, led multicultural teams in a high-pressure nightlife environment, and handled incidents, conflict resolution and operational decision-making.</p>
           <div class="chips">
@@ -1251,12 +1175,12 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2010 — 2013</span>
-          <h3>Head of Security</h3>
+          <h3>Head of Security Agent / Bodyguard</h3>
           <h4>Louis Vuitton · Saint-Tropez, France</h4>
-          <p>Protected luxury merchandise and high-value assets. Managed client access and supported VIP customer environments, conducting loss-prevention and security monitoring in a luxury retail setting.</p>
+          <p>Protected luxury merchandise and high-value assets in one of Europe's most prestigious destinations. Managed client access, supported VIP customer environments, and conducted loss-prevention and security monitoring in a luxury retail setting. Worldwide close-protection experience in demanding environments.</p>
           <div class="chips">
-            <span class="chip">Loss Prevention</span><span class="chip">High-Value Assets</span>
-            <span class="chip">Luxury Retail</span>
+            <span class="chip">Close Protection</span><span class="chip">Loss Prevention</span>
+            <span class="chip">High-Value Assets</span><span class="chip">Luxury Retail</span>
           </div>
         </div>
       </article>
@@ -1265,7 +1189,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2010</span>
-          <h3>Security Agent</h3>
+          <h3>Security Agent / Bodyguard</h3>
           <h4>Le Quai · Saint-Tropez, France</h4>
           <p>Provided security for a high-end nightlife establishment. Managed entrance control, crowd behaviour and conflict prevention, responding to alcohol-related incidents and challenging customer situations.</p>
           <div class="chips">
@@ -1281,9 +1205,10 @@ footer a:hover{color:var(--magenta)}
           <span class="tl-date">2010</span>
           <h3>Security Agent</h3>
           <h4>Dior · Saint-Tropez, France</h4>
-          <p>Managed store access and customer monitoring. Supported theft prevention and protection of high-value merchandise.</p>
+          <p>Managed store access and customer monitoring. Supported theft prevention and protection of high-value merchandise in a luxury boutique environment.</p>
           <div class="chips">
             <span class="chip">Store Access</span><span class="chip">Theft Prevention</span>
+            <span class="chip">Luxury Boutique</span>
           </div>
         </div>
       </article>
@@ -1336,44 +1261,45 @@ footer a:hover{color:var(--magenta)}
 
     <div class="skill-grid">
       <div class="skill-card reveal">
-        <span class="skill-num">01 / OPERATIONS</span>
-        <h3><i></i>Operations &amp; Management</h3>
+        <span class="skill-num">01 / EMERGING TECH</span>
+        <h3><i></i>AI, Blockchain &amp; Agentic Systems</h3>
         <div class="skill-tags">
-          <span class="tag">Team Leadership</span><span class="tag">Staff Scheduling</span>
-          <span class="tag">Budget Oversight</span><span class="tag">Operational Procedures</span>
-          <span class="tag">Reporting</span><span class="tag">Client Relations</span>
-          <span class="tag">Crisis Management</span>
+          <span class="tag">Prompt Engineering</span><span class="tag">AI Ethics</span>
+          <span class="tag">Agentic Systems</span><span class="tag">Blockchain</span>
+          <span class="tag">Digital Assets</span><span class="tag">Solidity Fundamentals</span>
+          <span class="tag">Emerging Tech Research</span>
         </div>
       </div>
 
       <div class="skill-card reveal d1">
-        <span class="skill-num">02 / SECURITY</span>
-        <h3><i></i>Security &amp; Risk Management</h3>
+        <span class="skill-num">02 / CYBERSECURITY</span>
+        <h3><i></i>Cybersecurity &amp; Digital Risk</h3>
         <div class="skill-tags">
-          <span class="tag">Physical Security</span><span class="tag">VIP Protection</span>
-          <span class="tag">Loss Prevention</span><span class="tag">CCTV</span>
-          <span class="tag">Access Control</span><span class="tag">Incident Prevention</span>
-          <span class="tag">Conflict Management</span><span class="tag">Crowd Management</span>
+          <span class="tag">Cybersecurity Awareness</span><span class="tag">Network Security</span>
+          <span class="tag">Threat Awareness</span><span class="tag">Data Protection</span>
+          <span class="tag">Social Engineering</span><span class="tag">Access Control Systems</span>
         </div>
       </div>
 
       <div class="skill-card reveal d2">
-        <span class="skill-num">03 / HOSPITALITY</span>
-        <h3><i></i>Business &amp; Hospitality</h3>
+        <span class="skill-num">03 / SECURITY</span>
+        <h3><i></i>Physical Security &amp; Risk Management</h3>
         <div class="skill-tags">
-          <span class="tag">VIP Guest Relations</span><span class="tag">Luxury Service Standards</span>
-          <span class="tag">Hospitality Operations</span><span class="tag">Entertainment Management</span>
-          <span class="tag">Business Development</span><span class="tag">International Clientele</span>
+          <span class="tag">Close Protection</span><span class="tag">Bodyguard Services</span>
+          <span class="tag">VIP Protection</span><span class="tag">Loss Prevention</span>
+          <span class="tag">CCTV</span><span class="tag">Incident Prevention</span>
+          <span class="tag">Conflict Management</span><span class="tag">Crowd Management</span>
         </div>
       </div>
 
       <div class="skill-card reveal d3">
-        <span class="skill-num">04 / TECHNOLOGY</span>
-        <h3><i></i>Emerging Technology</h3>
+        <span class="skill-num">04 / OPERATIONS</span>
+        <h3><i></i>Operations, Hospitality &amp; Leadership</h3>
         <div class="skill-tags">
-          <span class="tag">Artificial Intelligence</span><span class="tag">Blockchain</span>
-          <span class="tag">Digital Assets</span><span class="tag">Solidity Fundamentals</span>
-          <span class="tag">Cybersecurity Awareness</span><span class="tag">Emerging Tech Research</span>
+          <span class="tag">Team Leadership</span><span class="tag">Staff Scheduling</span>
+          <span class="tag">Budget Oversight</span><span class="tag">VIP Guest Relations</span>
+          <span class="tag">Luxury Service Standards</span><span class="tag">Crisis Management</span>
+          <span class="tag">International Clientele</span>
         </div>
       </div>
     </div>
@@ -1412,12 +1338,13 @@ footer a:hover{color:var(--magenta)}
     <!-- TECH MARQUEE -->
     <div class="marquee">
       <div class="marquee-track" id="marquee">
-        <span>Artificial Intelligence</span><span>◆</span>
-        <span>Blockchain</span><span>◆</span>
-        <span>Digital Assets</span><span>◆</span>
+        <span>Prompt Engineering</span><span>◆</span>
+        <span>AI Ethics</span><span>◆</span>
+        <span>Agentic Systems</span><span>◆</span>
         <span>Cybersecurity</span><span>◆</span>
-        <span>Solidity</span><span>◆</span>
-        <span>Geopolitics</span><span>◆</span>
+        <span>Blockchain</span><span>◆</span>
+        <span>Social Engineering</span><span>◆</span>
+        <span>Digital Assets</span><span>◆</span>
         <span>Emerging Technology</span><span>◆</span>
       </div>
     </div>
@@ -1430,8 +1357,8 @@ footer a:hover{color:var(--magenta)}
     <div class="eyebrow reveal">Contact</div>
     <h2 class="reveal d1">Let's build something<br><em>exceptional.</em></h2>
     <p class="lead reveal d2" style="text-align:center;margin-left:auto;margin-right:auto">
-      Available immediately for operations, security and hospitality leadership roles across Cambodia,
-      Southeast Asia and internationally.
+      Available immediately for operations, security and emerging technology leadership roles across
+      Cambodia, Southeast Asia and internationally.
     </p>
 
     <div class="cta-row reveal d3" style="justify-content:center">
@@ -1460,7 +1387,7 @@ footer a:hover{color:var(--magenta)}
 
 <footer>
   <span>© <span id="year"></span> Jonathan Victor Alexandre Roche</span>
-  <span>Operations · Security · Hospitality</span>
+  <span>Operations · Security · Emerging Tech</span>
   <div class="footer-links">
     <a href="mailto:joe.agentic@gmail.com">joe.agentic@gmail.com</a>
     <span>·</span>
@@ -1628,11 +1555,11 @@ footer a:hover{color:var(--magenta)}
   const el = document.getElementById('typed');
   if(!el) return;
   const roles = [
-    'Operations Director',
-    'Security & Risk Specialist',
-    'Hospitality Leader',
-    'VIP Client Relations',
-    'Multicultural Team Manager'
+    'Operations & Security Leader',
+    'Emerging Tech Specialist',
+    'AI Ethicist & Prompt Engineer',
+    'Close Protection Professional',
+    'Blockchain & Cybersecurity'
   ];
   let ri = 0, ci = 0, deleting = false;
 
