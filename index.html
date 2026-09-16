@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jonathan Victor Alexandre Roche — Digital Transformation & AI Consultant · Cambodia</title>
+<title>Jonathan Roche — Practical AI, Automation & Business Transformation · Cambodia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -179,7 +179,7 @@ main,header,footer{position:relative;z-index:3}
   display:grid;place-items:center;
   font-size:.6rem;font-weight:700;letter-spacing:0;color:var(--cyan);
 }
-.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links{display:flex;gap:30px;align-items:center}
 .nav-links a{
   font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--muted);
@@ -430,6 +430,43 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   animation:cue 2.1s ease-in-out infinite;
 }
 @keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ============================
+   APPROACH STRIP
+   ============================ */
+.approach{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:34px clamp(20px,5vw,64px);
+  background:linear-gradient(180deg,rgba(34,225,255,.04),transparent);
+  position:relative;z-index:3;
+}
+.approach-inner{
+  max-width:1240px;margin:0 auto;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:14px 26px;
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.approach-step{
+  display:inline-flex;align-items:center;gap:10px;
+  color:var(--text);
+}
+.approach-step b{
+  color:var(--cyan);
+  font-weight:600;
+  text-shadow:0 0 10px rgba(34,225,255,.6);
+}
+.approach-arrow{
+  color:rgba(139,92,246,.6);
+  font-size:.9rem;
+}
+@media(max-width:600px){
+  .approach-inner{font-size:.62rem;letter-spacing:.16em;gap:10px 16px}
+}
 
 /* ============================
    ABOUT
@@ -699,11 +736,20 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   letter-spacing:.06em;
   margin-left:4px;
 }
+.price-minimum{
+  font-family:var(--mono);
+  font-size:.66rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+  display:block;
+}
 .price-desc{
   font-size:.85rem;
   color:var(--muted);
   line-height:1.6;
-  margin:16px 0 20px;
+  margin:0 0 20px;
   padding-bottom:20px;
   border-bottom:1px dashed rgba(120,160,220,.16);
 }
@@ -712,7 +758,7 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   display:flex;
   flex-direction:column;
   gap:11px;
-  margin-bottom:26px;
+  margin-bottom:22px;
   flex:1;
 }
 .price-list li{
@@ -732,6 +778,28 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   text-shadow:0 0 8px rgba(34,225,255,.8);
 }
 .price-card.featured .price-list li::before{color:var(--magenta);text-shadow:0 0 8px rgba(255,47,185,.8)}
+.fixed-note{
+  font-size:.76rem;
+  color:var(--muted);
+  line-height:1.55;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px dashed rgba(120,160,220,.18);
+  background:rgba(255,255,255,.018);
+  margin-bottom:22px;
+  font-style:italic;
+}
+.fixed-note strong{color:var(--cyan);font-weight:500;font-style:normal}
+.price-start{
+  font-family:var(--mono);
+  font-size:.66rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:16px;
+  display:block;
+}
+.price-start b{color:var(--text);font-weight:600}
 .price-cta{
   display:inline-flex;
   align-items:center;
@@ -766,18 +834,76 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   background:linear-gradient(100deg,var(--magenta),var(--gold));
   color:#03040a;
 }
-.pricing-note{
-  margin-top:34px;
-  padding:22px 26px;
-  border-radius:14px;
-  border:1px dashed rgba(120,160,220,.22);
-  background:rgba(255,255,255,.02);
-  font-size:.88rem;
-  color:var(--muted);
-  text-align:center;
-  line-height:1.65;
+
+/* ============================
+   HOW IT WORKS
+   ============================ */
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-top:56px;
 }
-.pricing-note strong{color:var(--text);font-weight:500}
+.how-step{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:30px 26px;
+  background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+  backdrop-filter:blur(12px);
+  transition:transform .5s var(--ease),border-color .5s;
+}
+.how-step:hover{
+  transform:translateY(-7px);
+  border-color:rgba(34,225,255,.35);
+}
+.how-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:2.4rem;
+  font-weight:700;
+  line-height:1;
+  background:linear-gradient(180deg,var(--cyan),var(--violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;
+  margin-bottom:16px;
+  opacity:.85;
+}
+.how-step h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.02rem;
+  font-weight:600;
+  margin-bottom:10px;
+  line-height:1.3;
+}
+.how-step p{
+  font-size:.85rem;
+  color:var(--muted);
+  line-height:1.6;
+}
+.how-step code{
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--cyan);
+  background:rgba(34,225,255,.08);
+  padding:2px 7px;
+  border-radius:5px;
+  border:1px solid rgba(34,225,255,.2);
+  letter-spacing:.02em;
+}
+.how-tagline{
+  margin-top:44px;
+  text-align:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(1.2rem,3vw,1.8rem);
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.how-tagline em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--cyan),var(--violet) 45%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
 
 /* ============================
    EXPERIENCE TIMELINE
@@ -1124,7 +1250,8 @@ footer a:hover{color:var(--magenta)}
   .gallery-desc{font-size:.82rem}
   .price-card{padding:28px 24px 26px}
   .price-card.featured::after{right:18px}
-  .pricing-note{font-size:.82rem;padding:18px 20px}
+  .how-step{padding:24px 22px}
+  .how-num{font-size:2rem}
   .contact h2{font-size:clamp(1.9rem,9vw,3rem)}
   .contact .cta-row{width:100%}
   .contact .cta-row .btn{width:100%}
@@ -1205,8 +1332,9 @@ footer a:hover{color:var(--magenta)}
     <a href="#home" class="active">Home</a>
     <a href="#about">Profile</a>
     <a href="#services">Services</a>
-    <a href="#packages">Packages</a>
-    <a href="#experience">Experience</a>
+    <a href="#packages">Start for $200</a>
+    <a href="#process">Process</a>
+    <a href="#experience">Background</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
@@ -1216,183 +1344,59 @@ footer a:hover{color:var(--magenta)}
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="home">
-  <div class="hero-grid-floor"></div>
-  <div class="wrap">
-    <div class="status-pill"><span class="dot"></span> Independent Consultant · Phnom Penh, Cambodia</div>
-
-    <h1>
-      <span class="line"><span>Digital</span></span>
-      <span class="line"><span class="grad">Transformation</span></span>
-      <span class="line"><span>Consulting</span></span>
-    </h1>
-
+  <div class="hero-grid-floor"></div><div class="wrap">
+    <div class="status-pill"><span class="dot"></span> Practical Business Transformation · Phnom Penh, Cambodia</div>
+    <h1><span class="line"><span>Make Your Business</span></span><span class="line"><span class="grad">Smarter. Faster.</span></span><span class="line"><span>More Efficient.</span></span></h1>
     <div class="role-line"><span id="typed"></span><span class="cursor"></span></div>
-
-    <p class="summary">
-      Jonathan Victor Alexandre Roche — independent consultant based in Phnom Penh, guiding
-      businesses of every size through <strong>digital transformation</strong>,
-      <strong>Industry 4.0 readiness</strong>, <strong>AI &amp; agentic system deployment</strong>,
-      <strong>digital ethics</strong>, and <strong>cybersecurity fundamentals</strong>.
-      Backed by 15+ years of international operational leadership and six years of dedicated
-      mastery in emerging technology.
-    </p>
-
-    <div class="cta-row">
-      <a href="#packages" class="btn solid"><span>View Packages</span><span class="arrow">→</span></a>
-      <a href="#contact" class="btn"><span>Book a Consultation</span><span class="arrow">→</span></a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="hstat reveal"><b data-count="19" data-suffix="+">0</b><small>Years Professional Experience</small></div>
-      <div class="hstat reveal d1"><b data-count="6" data-suffix="">0</b><small>Years in Emerging Tech</small></div>
-      <div class="hstat reveal d2"><b data-count="8" data-suffix="">0</b><small>Consulting Domains</small></div>
-      <div class="hstat reveal d3"><b data-count="3" data-suffix="">0</b><small>Service Packages</small></div>
-    </div>
-  </div>
-
-  <div class="scroll-cue"><span>Scroll</span><i></i></div>
+    <p class="summary">Practical AI, automation, operational improvement and digital transformation for businesses in Cambodia and Southeast Asia. I help companies identify where technology can <strong>save time, reduce repetitive work, improve customer experience, strengthen operations and create new commercial opportunities</strong>. No technology for technology's sake.</p>
+    <div class="cta-row"><a href="#packages" class="btn solid"><span>Start with a $200 Audit</span><span class="arrow">→</span></a><a href="#contact" class="btn"><span>Discuss Your Business</span><span class="arrow">→</span></a></div>
+    <div class="hero-stats"><div class="hstat reveal"><b data-count="15" data-suffix="+">0</b><small>Years International Experience</small></div><div class="hstat reveal d1"><b data-count="3" data-suffix="">0</b><small>Countries · France · China · Cambodia</small></div><div class="hstat reveal d2"><b data-count="4" data-suffix="">0</b><small>Core Business Services</small></div><div class="hstat reveal d3"><b data-count="200" data-prefix="$">0</b><small>Fixed-Price Entry Audit</small></div></div>
+  </div><div class="scroll-cue"><span>Scroll</span><i></i></div>
 </section>
+
+<!-- ============ APPROACH STRIP ============ -->
+<div class="approach">
+  <div class="approach-inner">
+    <span class="approach-step"><b>01</b> Understand</span>
+    <span class="approach-arrow">→</span>
+    <span class="approach-step"><b>02</b> Plan</span>
+    <span class="approach-arrow">→</span>
+    <span class="approach-step"><b>03</b> Implement</span>
+    <span class="approach-arrow">→</span>
+    <span class="approach-step"><b>04</b> Train</span>
+    <span class="approach-arrow">→</span>
+    <span class="approach-step"><b>05</b> Support</span>
+  </div>
+</div>
 
 <!-- ============ ABOUT ============ -->
-<section id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div>
-        <div class="eyebrow reveal">The Consultant</div>
-        <h2 class="title reveal d1">Guiding organisations through<br><em>the digital revolution.</em></h2>
-        <p class="lead reveal d2">
-          I advise small, medium and large companies on how to navigate digital transformation
-          with clarity, discipline and measurable outcomes. My work combines strategic
-          advisory with hands-on implementation — from the first diagnostic review through
-          to full deployment, staff formation and ongoing technical support.
-        </p>
-        <p class="lead reveal d2" style="margin-top:18px">
-          Since 2020 I have dedicated myself to the mastery of <strong>Prompt Engineering</strong>,
-          <strong>AI Ethics</strong>, <strong>Cybersecurity</strong>, <strong>Blockchain &amp;
-          Digital Assets</strong>, <strong>Social Engineering</strong> and <strong>Agentic Systems</strong>.
-          This foundation, combined with 15+ years of operational and security leadership across
-          France, China and Cambodia, allows me to advise at the intersection of human risk,
-          operational resilience and intelligent automation.
-        </p>
-        <p class="lead reveal d2" style="margin-top:18px">
-          As an <strong>AI ethicist</strong>, I help leadership teams understand the responsible
-          deployment of AI — bias awareness, governance and the human impact of automated systems.
-          As a former <strong>close protection and security professional</strong>, I bring
-          situational awareness, discretion and calm decision-making to every engagement.
-        </p>
-
-        <div class="pillars">
-          <div class="pillar reveal d3">
-            <i>◈</i>
-            <div>
-              <h4>Strategic Technology Advisory</h4>
-              <p>Digital transformation, Industry 4.0 readiness, AI ethics, governance and long-term technology strategy.</p>
-            </div>
-          </div>
-          <div class="pillar reveal d4">
-            <i>◆</i>
-            <div>
-              <h4>AI &amp; Agentic Implementation</h4>
-              <p>LLM deployment, agentic system architecture, installation, testing, continuous model updates and support.</p>
-            </div>
-          </div>
-          <div class="pillar reveal d5">
-            <i>◇</i>
-            <div>
-              <h4>Cybersecurity &amp; Formation</h4>
-              <p>Infrastructure security, safe digital behaviours, employee and executive formation, crisis readiness.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <aside class="info-card reveal d2">
-        <h3>Engagement Overview</h3>
-        <div class="info-row"><span>Base</span><span>Phnom Penh, Cambodia</span></div>
-        <div class="info-row"><span>Coverage</span><span>Cambodia · SEA · International</span></div>
-        <div class="info-row"><span>Clients</span><span>Small · Medium · Large Enterprise</span></div>
-        <div class="info-row"><span>Delivery</span><span>Advisory or Full Implementation</span></div>
-        <div class="info-row"><span>Languages</span><span>FR · EN · 中文</span></div>
-        <div class="info-row"><span>Availability</span><span>Immediate</span></div>
-        <div class="info-row"><span>Focus</span><span>AI · Cyber · Digital Transformation</span></div>
-        <div class="info-row"><span>Engagement</span><span>Hourly · Retainer · Project</span></div>
-      </aside>
-    </div>
-  </div>
-</section>
+<section id="about"><div class="wrap"><div class="about-grid"><div>
+<div class="eyebrow reveal">The Consultant</div><h2 class="title reveal d1">Business first.<br><em>Technology where it creates value.</em></h2>
+<p class="lead reveal d2">I'm <strong>Jonathan Victor Alexandre Roche</strong>, an independent consultant based in Phnom Penh. I combine 15+ years of international operational and security leadership across France, China and Cambodia with focused work since 2020 in applied AI, automation, digital transformation, AI ethics, cybersecurity awareness and emerging technologies.</p>
+<p class="lead reveal d2" style="margin-top:18px"><strong>First, I understand the business:</strong> how customers arrive, how employees work, where time is lost, where opportunities are missed and where operational or human risks exist. Then we decide whether AI, automation, digital tools, stronger controls — or simply a better process — can improve it.</p>
+<p class="lead reveal d2" style="margin-top:18px">I lead business analysis, operational design, transformation strategy and project coordination. Where specialist software engineering, infrastructure or technical cybersecurity expertise is required, I coordinate suitable technical resources rather than overstating what one consultant should deliver alone.</p>
+<div class="pillars"><div class="pillar reveal d3"><i>◈</i><div><h4>Start Small, Prove Value</h4><p>Begin with a $200 fixed-price opportunity audit. Continue only when there is a credible business case.</p></div></div><div class="pillar reveal d4"><i>◆</i><div><h4>Fixed-Price Clarity</h4><p>Scope, deliverables and price are agreed before implementation begins.</p></div></div><div class="pillar reveal d5"><i>◇</i><div><h4>Local Presence, International Perspective</h4><p>On-the-ground in Phnom Penh, with international operational experience and multilingual capability.</p></div></div></div></div>
+<aside class="info-card reveal d2"><h3>Engagement Overview</h3><div class="info-row"><span>Base</span><span>Phnom Penh, Cambodia</span></div><div class="info-row"><span>Coverage</span><span>Cambodia · SEA · International</span></div><div class="info-row"><span>Clients</span><span>SMEs · Growing Businesses · Enterprise</span></div><div class="info-row"><span>Delivery</span><span>Advisory · Implementation Coordination</span></div><div class="info-row"><span>Languages</span><span>FR · EN · 中文</span></div><div class="info-row"><span>Focus</span><span>Business · Operations · AI · Automation</span></div><div class="info-row"><span>Entry</span><span>$200 Fixed Opportunity Audit</span></div></aside>
+</div></div></section>
 
 <!-- ============ SERVICES ============ -->
-<section id="services">
-  <div class="wrap">
-    <div class="eyebrow reveal">Consulting Domains</div>
-    <h2 class="title reveal d1">Eight areas of expertise,<br><em>one integrated approach.</em></h2>
-    <p class="lead reveal d2">
-      Every engagement is tailored to the maturity, sector and ambition of the organisation —
-      from first-time digital reviews to advanced AI deployment.
-    </p>
-
-    <div class="service-grid">
-      <div class="service-card reveal">
-        <span class="service-num">01 / TRANSFORMATION</span>
-        <h3>Digital Transformation Strategy</h3>
-        <p>Structured roadmap for modernising operations, processes and systems — aligned with business objectives and measurable outcomes.</p>
-      </div>
-
-      <div class="service-card reveal d1">
-        <span class="service-num">02 / INDUSTRY 4.0</span>
-        <h3>Industry 4.0 Readiness</h3>
-        <p>Assessment of organisational maturity against the fourth industrial revolution — identifying gaps, priorities and investment pathways.</p>
-      </div>
-
-      <div class="service-card reveal d2">
-        <span class="service-num">03 / AI &amp; AGENTIC</span>
-        <h3>AI &amp; Agentic System Implementation</h3>
-        <p>Design, deployment and integration of AI models and agentic architectures adapted to the operational reality of the business.</p>
-      </div>
-
-      <div class="service-card reveal d3">
-        <span class="service-num">04 / ETHICS</span>
-        <h3>Digital Ethics &amp; Governance</h3>
-        <p>Responsible AI deployment, bias awareness, governance frameworks and a clear understanding of the digital revolution's human impact.</p>
-      </div>
-
-      <div class="service-card reveal d4">
-        <span class="service-num">05 / LLM DEPLOYMENT</span>
-        <h3>AI Tools — Installation &amp; Support</h3>
-        <p>Selection, installation and configuration of large language models and AI tools, tailored to the organisation's workflows and constraints.</p>
-      </div>
-
-      <div class="service-card reveal d5">
-        <span class="service-num">06 / CONTINUOUS SUPPORT</span>
-        <h3>Model Updates &amp; Technical Support</h3>
-        <p>Ongoing maintenance, model updates and technical support as the AI landscape evolves — keeping systems current, secure and effective.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <span class="service-num">07 / FORMATION</span>
-        <h3>Employee &amp; Executive Formation</h3>
-        <p>Structured training programmes for staff and leadership — from foundational AI literacy to advanced operational use of new tools.</p>
-      </div>
-
-      <div class="service-card reveal d1">
-        <span class="service-num">08 / CYBERSECURITY</span>
-        <h3>Cybersecurity Fundamentals</h3>
-        <p>Practical courses on safe digital behaviours, threat awareness and the right vocabulary — building a security-conscious culture across the organisation.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="services"><div class="wrap"><div class="eyebrow reveal">How I Help</div><h2 class="title reveal d1">Four ways to create<br><em>practical business value.</em></h2><p class="lead reveal d2">The objective is not to “use AI.” It is to improve revenue, efficiency, customer experience, operations or market access — using technology only where it makes sense.</p><div class="service-grid">
+<div class="service-card reveal"><span class="service-num">01 / AI &amp; AUTOMATION</span><h3>AI &amp; Business Automation</h3><p>Identify repetitive work and commercial opportunities for smarter workflows: lead qualification, CRM follow-up, guest/customer communication, reporting, internal knowledge, multilingual communication and practical AI agents.</p></div>
+<div class="service-card reveal d1"><span class="service-num">02 / OPERATIONS</span><h3>Digital &amp; Operational Transformation</h3><p>Review workflows, systems and bottlenecks; redesign processes and coordinate practical modernization through better tools, reporting, integration and automation.</p></div>
+<div class="service-card reveal d2"><span class="service-num">03 / RISK</span><h3>Security, Risk &amp; Resilience</h3><p>Management-level review of human risk, security awareness, operational vulnerabilities, access processes and resilience. Specialist technical cybersecurity work is coordinated when required.</p></div>
+<div class="service-card reveal d3"><span class="service-num">04 / CAMBODIA &amp; ASEAN</span><h3>Commercial &amp; Market-Entry Advisory</h3><p>On-the-ground support for market research, opportunity identification, local representation, partnerships, business development, project origination, multilingual liaison and coordination between international and local stakeholders.</p></div>
+</div></div></section>
 
 <!-- ============ PHOTO GALLERY ============ -->
 <section id="gallery">
   <div class="wrap">
     <div class="eyebrow reveal">Visual Profile</div>
-    <h2 class="title reveal d1">Let’s go invent tomorrow<em> instead of worrying about what happened yesterday</em></h2>
+    <h2 class="title reveal d1">In the field,<em> on the ground.</em></h2>
 
     <div class="gallery-grid single">
       <figure class="gallery-item reveal d2">
         <img src="https://i.ibb.co/zWpBFP1Z/photo-2026-09-16-11-32-19-2.jpg"
-             alt="The biggest part of our digital transformation is changing the way we think"
+             alt="Jonathan Roche — AI & Digital Transformation Consultant, Phnom Penh"
              loading="lazy" />
         <figcaption>
           <span class="gallery-loc">Phnom Penh, Cambodia</span>
@@ -1404,90 +1408,14 @@ footer a:hover{color:var(--magenta)}
 </section>
 
 <!-- ============ PACKAGES ============ -->
-<section id="packages">
-  <div class="wrap">
-    <div class="eyebrow reveal">Engagement Packages</div>
-    <h2 class="title reveal d1">Three tiers,<br><em>one clear path forward.</em></h2>
-    <p class="lead reveal d2">
-      Each package will be delivered as <strong> a
-      <strong>full implementation</strong> including installation, testing, formation and
-      continuous support. All engagements are scoped to the size and complexity of the organisation.
-    </p>
+<section id="packages"><div class="wrap"><div class="eyebrow reveal">Simple Ways to Start</div><h2 class="title reveal d1">Start small. Prove value.<br><em>Scale only when it makes sense.</em></h2><p class="lead reveal d2"><strong>Not sure where to start? Don't buy technology yet.</strong> Begin with a focused audit, identify what is worth changing, then decide whether implementation has a credible business case.</p><div class="pricing-grid">
+<div class="price-card featured reveal"><span class="price-num">PACKAGE 01 · BEST FIRST STEP</span><h3>Business &amp; AI Opportunity Audit</h3><div class="price-amount">$200<small> fixed</small></div><span class="price-minimum">No obligation to continue</span><p class="price-desc">A low-risk way to discover where your business can save time, improve operations or create commercial value before investing in technology.</p><ul class="price-list"><li>Business &amp; workflow review</li><li>Repetitive-process identification</li><li>AI &amp; automation opportunity assessment</li><li>Basic operational/security-risk observations</li><li>3–5 prioritized improvement opportunities</li><li>Practical action plan</li><li>Management debrief</li></ul><div class="fixed-note"><strong>Clear outcome:</strong> understand what is worth changing, what is not, and what should come first.</div><span class="price-start">Fixed investment · <b>$200</b></span><a href="mailto:joe.agentic@gmail.com?subject=Business%20%26%20AI%20Opportunity%20Audit" class="price-cta">Start Your Audit</a></div>
+<div class="price-card reveal d1"><span class="price-num">PACKAGE 02</span><h3>Digital &amp; Automation Implementation</h3><div class="price-amount">$500<small>+ project</small></div><span class="price-minimum">Fixed scope before work begins</span><p class="price-desc">Turn a validated opportunity into a useful business improvement with a clearly scoped implementation.</p><ul class="price-list"><li>Workflow &amp; CRM automation</li><li>Lead and customer follow-up processes</li><li>Guest/customer communication</li><li>AI-assisted business workflows</li><li>Operational reporting</li><li>Digital-tool implementation</li><li>Process redesign</li><li>Staff adoption &amp; training</li><li>Implementation coordination</li></ul><div class="fixed-note"><strong>Projects from $500.</strong> Additional advisory work can be provided at $100/hour when agreed in advance.</div><span class="price-start">Projects from · <b>$500</b></span><a href="mailto:joe.agentic@gmail.com?subject=Digital%20%26%20Automation%20Project" class="price-cta">Discuss a Project</a></div>
+<div class="price-card reveal d2"><span class="price-num">PACKAGE 03</span><h3>Transformation &amp; Implementation Partnership</h3><div class="price-amount">$1,000<small>+ project</small></div><span class="price-minimum">Fixed quotation after scope</span><p class="price-desc">For broader change across multiple workflows, departments or systems, combining business transformation with coordinated technical delivery.</p><ul class="price-list"><li>Business transformation strategy</li><li>AI &amp; automation deployment</li><li>Agentic workflows where appropriate</li><li>System &amp; process integration</li><li>Operational modernization</li><li>Governance &amp; controls</li><li>Employee/management training</li><li>Testing &amp; rollout coordination</li><li>Post-deployment support</li></ul><div class="fixed-note"><strong>Delivery model:</strong> Jonathan leads business analysis, operational design, transformation strategy and project coordination. Specialist technical resources are incorporated where required and agreed in advance.</div><span class="price-start">Projects from · <b>$1,000</b></span><a href="mailto:joe.agentic@gmail.com?subject=Transformation%20%26%20Implementation%20Partnership" class="price-cta">Discuss Transformation</a></div>
+</div></div></section>
 
-    <div class="pricing-grid">
-      <!-- PACKAGE 1 -->
-      <div class="price-card reveal">
-        <span class="price-num">PACKAGE 01</span>
-        <h3>Diagnostic &amp; Strategic Advisory</h3>
-        <div class="price-amount">$300<small>/ hour</small></div>
-        <p class="price-desc">
-          A purely advisory engagement. Comprehensive commentary on the organisation —
-          strengths, weaknesses and vulnerabilities — with clear recommendations on what
-          should change to be more effective and more secure.
-        </p>
-        <ul class="price-list">
-          <li>Full organisational review </li>
-          <li>Identification of critical vulnerabilities</li>
-          <li>Priority recommendations for improvement</li>
-          <li>Risk &amp; opportunity analysis</li>
-          <li>Executive summary &amp; roadmap outline</li>
-          <li>Written report and executive briefing</li>
-        </ul>
-        <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry%20—%20Package%2001" class="price-cta">Request Package</a>
-      </div>
-
-      <!-- PACKAGE 2 -->
-      <div class="price-card reveal d1">
-        <span class="price-num">PACKAGE 02</span>
-        <h3>Digital Transformation &amp; Infrastructure Review</h3>
-        <div class="price-amount">$500<small>/ hour</small></div>
-        <p class="price-desc">
-          A complete review of the organisation's technical foundation — servers, computers,
-          networks and systems — with a safety and resilience assessment, and a structured
-          roadmap for successful digital transformation.
-        </p>
-        <ul class="price-list">
-          <li>Full review of servers, computers and systems</li>
-          <li>Cybersecurity posture assessment</li>
-          <li>Data protection &amp; access control review</li>
-          <li>Digital transformation roadmap</li>
-          <li>Industry 4.0 readiness report</li>
-          <li>Implementation priorities &amp; cost outline</li>
-        </ul>
-        <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry%20—%20Package%2002" class="price-cta">Request Package</a>
-      </div>
-
-      <!-- PACKAGE 3 — FEATURED -->
-      <div class="price-card featured reveal d2">
-        <span class="price-num">PACKAGE 03</span>
-        <h3>Complete Implementation &amp; Enablement</h3>
-        <div class="price-amount">$700<small>/ hour</small></div>
-        <p class="price-desc">
-          End-to-end deployment. Complete infrastructure security, AI and agentic system
-          implementation, installation, testing, formation and continuous support.
-          The flagship engagement for organisations ready to fully transform.
-        </p>
-        <ul class="price-list">
-          <li>Complete infrastructure security hardening</li>
-          <li>LLM &amp; AI tool installation and configuration</li>
-          <li>Agentic system design and deployment</li>
-          <li>Full testing &amp; validation</li>
-          <li>Employee &amp; executive formation programmes</li>
-          <li>Cybersecurity safe-behaviour course</li>
-          <li>Continuous model updates &amp; technical support</li>
-        </ul>
-        <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry%20—%20Package%2003" class="price-cta">Request Package</a>
-      </div>
-    </div>
-
-    <div class="pricing-note reveal d3">
-      <strong>Flexible delivery.</strong> Packages are available as <strong>theory-only advisory</strong>
-      or as a <strong>complete implementation</strong> — including installation, testing, formation and
-      ongoing support. Engagements can be delivered on an hourly, retainer or project basis, and are
-      tailored to the size and sector of the organisation, from small businesses to large enterprise.
-    </div>
-  </div>
-</section>
+<!-- ============ HOW IT WORKS ============ -->
+<section id="process"><div class="wrap"><div class="eyebrow reveal">How It Works</div><h2 class="title reveal d1">Understand. Improve.<br><em>Implement. Measure. Scale.</em></h2><p class="lead reveal d2">A disciplined process keeps the focus on business value and gives you clarity before committing to larger work.</p><div class="how-grid"><div class="how-step reveal"><span class="how-num">01</span><h3>Understand the business</h3><p>We start with objectives, workflows, customers, problems and opportunities — not with a technology pitch.</p></div><div class="how-step reveal d1"><span class="how-num">02</span><h3>Identify what matters</h3><p>We prioritize the few changes most likely to create practical value. Not every problem needs AI.</p></div><div class="how-step reveal d2"><span class="how-num">03</span><h3>Agree scope &amp; price</h3><p>You receive clearly defined deliverables and a fixed project quotation before implementation begins.</p></div><div class="how-step reveal d3"><span class="how-num">04</span><h3>Implement &amp; measure</h3><p>We deliver directly within the agreed scope or coordinate appropriate specialists, then assess the result before deciding whether to scale.</p></div></div><p class="how-tagline reveal d4">Start small. <em>Prove value.</em> Then scale.</p></div></section>
 
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience">
@@ -1498,7 +1426,92 @@ footer a:hover{color:var(--magenta)}
     <div class="timeline" id="timeline">
       <div class="tl-line"><div class="tl-fill" id="tlFill"></div></div>
 
-    
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2020 — Present</span>
+          <h3>Independent Consultant</h3>
+          <h4>AI, Digital Transformation &amp; Cybersecurity · Phnom Penh &amp; Remote</h4>
+          <p>Advising businesses of every size on digital transformation, Industry 4.0 readiness, AI and agentic system implementation, digital ethics, and cybersecurity fundamentals. Delivering strategic advisory and hands-on deployment — from diagnostic review through to installation, formation and continuous technical support.</p>
+          <div class="chips">
+            <span class="chip">Digital Transformation</span><span class="chip">AI &amp; Agentic</span>
+            <span class="chip">Cybersecurity</span><span class="chip">Formation</span>
+            <span class="chip">AI Ethics</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2017 — 2018</span>
+          <h3>Hotel Manager / Operations Manager</h3>
+          <h4>Golden Boat Hotel · Phnom Penh, Cambodia</h4>
+          <p>Managed approximately 20 employees across reception, housekeeping and security. Oversaw staff scheduling, day-to-day operations and service quality, managed budgets and operational requirements, and maintained relationships with international and VIP guests while coordinating security, customer service and facility operations.</p>
+          <div class="chips">
+            <span class="chip">20 Staff</span><span class="chip">Budget Oversight</span>
+            <span class="chip">Service Quality</span><span class="chip">VIP Relations</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2015 — 2017</span>
+          <h3>Director &amp; General Manager</h3>
+          <h4>Loby Nightclub · Phnom Penh, Cambodia</h4>
+          <p>Managed overall nightclub operations including staff, security, customer relations and administration. Supervised security procedures and crowd-management protocols, led multicultural teams in a high-pressure nightlife environment, and handled incidents, conflict resolution and operational decision-making.</p>
+          <div class="chips">
+            <span class="chip">Crowd Management</span><span class="chip">Multicultural Teams</span>
+            <span class="chip">Conflict Resolution</span><span class="chip">VIP Clients</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2010 — 2013</span>
+          <h3>Head of Security / Close Protection</h3>
+          <h4>Louis Vuitton · Saint-Tropez, France</h4>
+          <p>Protected luxury merchandise and high-value assets in one of Europe's most prestigious destinations. Managed client access, supported VIP customer environments, and conducted loss-prevention and security monitoring in a luxury retail setting. Worldwide close-protection experience in demanding environments.</p>
+          <div class="chips">
+            <span class="chip">Close Protection</span><span class="chip">Loss Prevention</span>
+            <span class="chip">High-Value Assets</span><span class="chip">Luxury Retail</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2010</span>
+          <h3>Security Agent / Close Protection</h3>
+          <h4>Le Quai · Saint-Tropez, France</h4>
+          <p>Provided security for a high-end nightlife establishment. Managed entrance control, crowd behaviour and conflict prevention, responding to alcohol-related incidents and challenging customer situations.</p>
+          <div class="chips">
+            <span class="chip">Entrance Control</span><span class="chip">Crowd Behaviour</span>
+            <span class="chip">Conflict Prevention</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2010</span>
+          <h3>Security Agent</h3>
+          <h4>Dior · Saint-Tropez, France</h4>
+          <p>Managed store access and customer monitoring. Supported theft prevention and protection of high-value merchandise in a luxury boutique environment.</p>
+          <div class="chips">
+            <span class="chip">Store Access</span><span class="chip">Theft Prevention</span>
+            <span class="chip">Luxury Boutique</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
     <!-- EARLIER CAREER -->
     <div class="earlier">
       <h3>Earlier Career &amp; Education</h3>
@@ -1528,153 +1541,31 @@ footer a:hover{color:var(--magenta)}
           <em>2004 — 2006 · Beijing, China</em>
           <p>Studies in Kung Fu / Wushu, Mandarin Chinese language and Chinese culture.</p>
         </div>
+        <div class="mini reveal d5">
+          <b>Lycée Bergson — Baccalauréat</b>
+          <em>2002 · Paris, France</em>
+          <p>French secondary education diploma.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ SKILLS ============ -->
-<section id="skills">
-  <div class="wrap">
-    <div class="eyebrow reveal">Consulting Competencies</div>
-    <h2 class="title reveal d1">Depth across technology,<br><em>security and leadership.</em></h2>
-
-    <div class="skill-grid">
-      <div class="skill-card reveal">
-        <span class="skill-num">01 / EMERGING TECH</span>
-        <h3><i></i>AI, Blockchain &amp; Agentic Systems</h3>
-        <div class="skill-tags">
-          <span class="tag">Prompt Engineering</span><span class="tag">AI Ethics</span>
-          <span class="tag">Agentic Systems</span><span class="tag">Blockchain</span>
-          <span class="tag">Digital Assets</span><span class="tag">Solidity Fundamentals</span>
-          <span class="tag">Emerging Tech Research</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal d1">
-        <span class="skill-num">02 / CYBERSECURITY</span>
-        <h3><i></i>Cybersecurity &amp; Digital Risk</h3>
-        <div class="skill-tags">
-          <span class="tag">Cybersecurity Awareness</span><span class="tag">Network Security</span>
-          <span class="tag">Threat Awareness</span><span class="tag">Data Protection</span>
-          <span class="tag">Social Engineering</span><span class="tag">Access Control Systems</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal d2">
-        <span class="skill-num">03 / ADVISORY</span>
-        <h3><i></i>Strategy, Governance &amp; Formation</h3>
-        <div class="skill-tags">
-          <span class="tag">Digital Transformation</span><span class="tag">Industry 4.0 Readiness</span>
-          <span class="tag">AI Governance</span><span class="tag">Executive Formation</span>
-          <span class="tag">Employee Training</span><span class="tag">Change Management</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal d3">
-        <span class="skill-num">04 / OPERATIONS</span>
-        <h3><i></i>Operations, Security &amp; Leadership</h3>
-        <div class="skill-tags">
-          <span class="tag">Team Leadership</span><span class="tag">Close Protection</span>
-          <span class="tag">VIP Protection</span><span class="tag">Crisis Management</span>
-          <span class="tag">Luxury Service Standards</span><span class="tag">International Clientele</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- LANGUAGES -->
-    <div class="lang-wrap">
-      <svg width="0" height="0" style="position:absolute">
-        <defs>
-          <linearGradient id="langGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#22e1ff"/>
-            <stop offset="55%" stop-color="#8b5cf6"/>
-            <stop offset="100%" stop-color="#ff2fb9"/>
-          </linearGradient>
-        </defs>
-      </svg>
-
-      <div class="lang reveal" data-pct="100">
-        <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg>
-        <div class="lang-pct">100%</div>
-        <div class="lang-body"><strong>French</strong><span>Native</span></div>
-      </div>
-
-      <div class="lang reveal d1" data-pct="95">
-        <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg>
-        <div class="lang-pct">95%</div>
-        <div class="lang-body"><strong>English</strong><span>Fluent</span></div>
-      </div>
-
-      <div class="lang reveal d2" data-pct="78">
-        <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg>
-        <div class="lang-pct">78%</div>
-        <div class="lang-body"><strong>Mandarin Chinese</strong><span>Professional Working</span></div>
-      </div>
-    </div>
-
-    <!-- TECH MARQUEE -->
-    <div class="marquee">
-      <div class="marquee-track" id="marquee">
-        <span>Digital Transformation</span><span>◆</span>
-        <span>Industry 4.0</span><span>◆</span>
-        <span>AI &amp; Agentic Systems</span><span>◆</span>
-        <span>Prompt Engineering</span><span>◆</span>
-        <span>AI Ethics</span><span>◆</span>
-        <span>Cybersecurity</span><span>◆</span>
-        <span>Blockchain</span><span>◆</span>
-        <span>LLM Deployment</span><span>◆</span>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="skills"><div class="wrap"><div class="eyebrow reveal">Capabilities</div><h2 class="title reveal d1">Technology informed.<br><em>Business focused.</em></h2><div class="skill-grid">
+<div class="skill-card reveal"><span class="skill-num">01 / APPLIED AI</span><h3><i></i>AI &amp; Automation</h3><div class="skill-tags"><span class="tag">Prompt Engineering</span><span class="tag">AI-Assisted Workflows</span><span class="tag">Agentic Systems</span><span class="tag">LLM Applications</span><span class="tag">AI Opportunity Assessment</span></div></div>
+<div class="skill-card reveal d1"><span class="skill-num">02 / TRANSFORMATION</span><h3><i></i>Digital &amp; Operational Improvement</h3><div class="skill-tags"><span class="tag">Workflow Modernization</span><span class="tag">Process Improvement</span><span class="tag">Digital Tool Selection</span><span class="tag">Implementation Coordination</span><span class="tag">Change Management</span></div></div>
+<div class="skill-card reveal d2"><span class="skill-num">03 / GOVERNANCE</span><h3><i></i>AI Governance &amp; Human Factors</h3><div class="skill-tags"><span class="tag">AI Ethics</span><span class="tag">Responsible Adoption</span><span class="tag">Human Impact</span><span class="tag">Social Engineering Awareness</span><span class="tag">Management Education</span></div></div>
+<div class="skill-card reveal d3"><span class="skill-num">04 / OPERATIONS</span><h3><i></i>Security &amp; Operational Risk</h3><div class="skill-tags"><span class="tag">Security Awareness</span><span class="tag">Human Risk</span><span class="tag">Operational Security</span><span class="tag">Crisis Awareness</span><span class="tag">VIP / Security Operations</span><span class="tag">International Clientele</span></div></div></div>
+<p class="lead reveal d4" style="margin-top:34px">My role is to connect technology to practical business requirements. Where a project requires specialist software engineering, penetration testing, infrastructure engineering or other specialist technical work, appropriate professionals are incorporated into delivery.</p>
+</div></section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact" class="contact">
-  <div class="wrap">
-    <div class="eyebrow reveal">Contact</div>
-    <h2 class="reveal d1">Your transformation<br><em>starts here.</em></h2>
-    <p class="lead reveal d2" style="text-align:center;margin-left:auto;margin-right:auto">
-      Available immediately for consulting engagements across Cambodia, Southeast Asia and
-      internationally. Small, medium and large organisations welcome. Let's discuss how your
-      business can move confidently into the digital era.
-    </p>
-
-    <div class="cta-row reveal d3" style="justify-content:center">
-      <a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry" class="btn solid"><span>Request a Consultation</span><span class="arrow">→</span></a>
-      <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="btn"><span>Message on Telegram</span><span class="arrow">→</span></a>
-    </div>
-
-    <div class="contact-meta reveal d4">
-      <a class="meta-chip" href="mailto:joe.agentic@gmail.com">
-        Email <b>joe.agentic@gmail.com</b>
-      </a>
-      <a class="meta-chip" href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">
-        Telegram <b>@Agentickh</b>
-      </a>
-      <a class="meta-chip" href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">
-        t.me <b>Agentickh</b>
-      </a>
-      <a class="meta-chip" href="tel:+855969503632">
-        Phone <b>+855 96 950 3632</b>
-      </a>
-    </div>
-  </div>
-</section>
+<section id="contact" class="contact"><div class="wrap"><div class="eyebrow reveal">Contact</div><h2 class="reveal d1">What could your business<br><em>do better?</em></h2><p class="lead reveal d2" style="text-align:center;margin-left:auto;margin-right:auto">You don't need to know which technology you need. Tell me what isn't working, what takes too much time, or what you want the business to achieve. We'll determine whether AI, automation, digital transformation, operational improvement — or simply a better process — can help.</p><p class="lead reveal d2" style="text-align:center;margin:18px auto 34px"><strong>Start with a 15–20 minute conversation, or begin with the $200 Business &amp; AI Opportunity Audit.</strong></p><div class="cta-row reveal d3" style="justify-content:center"><a href="mailto:joe.agentic@gmail.com?subject=Consulting%20Enquiry" class="btn solid"><span>Request a Consultation</span><span class="arrow">→</span></a><a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer" class="btn"><span>Message on Telegram</span><span class="arrow">→</span></a></div><div class="contact-meta reveal d4"><a class="meta-chip" href="mailto:joe.agentic@gmail.com">Email <b>joe.agentic@gmail.com</b></a><a class="meta-chip" href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">Telegram <b>@Agentickh</b></a><span class="meta-chip">Based in <b>Phnom Penh, Cambodia</b></span></div></div></section>
 
 </main>
 
-<footer>
-  <span>© <span id="year"></span> Jonathan Victor Alexandre Roche</span>
-  <span>Digital Transformation · AI · Cybersecurity Consulting</span>
-  <div class="footer-links">
-    <a href="mailto:joe.agentic@gmail.com">joe.agentic@gmail.com</a>
-    <span>·</span>
-    <a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">@Agentickh</a>
-    <span>·</span>
-    <a href="tel:+855969503632">+855 96 950 3632</a>
-  </div>
-</footer>
+<footer><span>© <span id="year"></span> Jonathan Victor Alexandre Roche</span><span>Practical AI · Automation · Business Transformation · Cambodia</span><div class="footer-links"><a href="mailto:joe.agentic@gmail.com">joe.agentic@gmail.com</a><span>·</span><a href="https://t.me/Agentickh" target="_blank" rel="noopener noreferrer">@Agentickh</a></div></footer>
 
 <script>
 /* =========================================================
@@ -1820,7 +1711,7 @@ footer a:hover{color:var(--magenta)}
     requestAnimationFrame(loop);
   })();
 
-  const hot = document.querySelectorAll('a, button, .tl-card, .skill-card, .mini, .lang, .pillar, .tag, .chip, .gallery-item, .service-card, .price-card');
+  const hot = document.querySelectorAll('a, button, .tl-card, .skill-card, .mini, .lang, .pillar, .tag, .chip, .gallery-item, .service-card, .price-card, .how-step');
   hot.forEach(el=>{
     el.addEventListener('mouseenter', ()=>ring.classList.add('hot'));
     el.addEventListener('mouseleave', ()=>ring.classList.remove('hot'));
@@ -1834,11 +1725,11 @@ footer a:hover{color:var(--magenta)}
   const el = document.getElementById('typed');
   if(!el) return;
   const roles = [
-    'Digital Transformation Advisor',
-    'AI & Agentic Systems Consultant',
+    'Business & AI Opportunity Audits',
+    'Operational Transformation',
+    'Cambodia & ASEAN Advisory',
     'Cybersecurity & Digital Ethics',
-    'Industry 4.0 Readiness',
-    'LLM Deployment & Formation'
+    'Formation & Continuous Support'
   ];
   let ri = 0, ci = 0, deleting = false;
 
