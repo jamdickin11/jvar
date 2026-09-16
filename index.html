@@ -319,7 +319,7 @@ h2.title em{
 }
 .status-pill .dot{
   width:7px;height:7px;border-radius:50%;background:#22e58f;
-  box-shadow:0 0 10px #22e58f;position:relative;
+  box-shadow:0 0 10px #22e58f;position:relative;flex:0 0 auto;
 }
 .status-pill .dot::after{
   content:'';position:absolute;inset:-4px;border-radius:50%;
@@ -383,6 +383,8 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
   border:1px solid var(--glass-b);
   transition:transform .35s var(--ease),border-color .35s,color .35s;
   background:var(--glass);backdrop-filter:blur(10px);
+  max-width:100%;
+  box-sizing:border-box;
 }
 .btn span{position:relative;z-index:2}
 .btn::before{
@@ -555,11 +557,6 @@ body.loaded .hero h1 .line:nth-child(3) > span{animation-delay:.34s}
 .gallery-grid.single .gallery-item img{
   height:520px;
   object-position:center 20%;
-}
-@media(max-width:600px){
-  .gallery-grid.single .gallery-item img{
-    height:380px;
-  }
 }
 
 /* ============================
@@ -835,6 +832,197 @@ footer a{color:var(--cyan);transition:color .3s}
 footer a:hover{color:var(--magenta)}
 .footer-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 
+/* ============================
+   MOBILE RESPONSIVE FIXES
+   ============================ */
+@media(max-width:600px){
+  /* --- HERO SECTION RECENTERING --- */
+  .hero{
+    padding-top:110px;
+    padding-bottom:60px;
+    min-height:auto;
+    text-align:left;
+  }
+  .hero .wrap{
+    width:100%;
+  }
+  .status-pill{
+    font-size:.58rem;
+    letter-spacing:.12em;
+    padding:7px 14px 7px 11px;
+    margin-bottom:24px;
+    max-width:100%;
+    white-space:normal;
+    line-height:1.4;
+  }
+  .status-pill .dot{
+    flex:0 0 auto;
+  }
+
+  /* --- HERO TITLE --- */
+  .hero h1{
+    font-size:clamp(2.1rem,12vw,3.2rem);
+    line-height:.95;
+    margin-bottom:20px;
+  }
+
+  /* --- ROLE LINE --- */
+  .hero .role-line{
+    font-size:.72rem;
+    letter-spacing:.1em;
+    margin-bottom:20px;
+    min-height:2.4em;
+  }
+
+  /* --- SUMMARY --- */
+  .hero p.summary{
+    font-size:.9rem;
+    margin-bottom:30px;
+  }
+
+  /* --- CTA BUTTONS: FULL-WIDTH, STACKED --- */
+  .cta-row{
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+    margin-bottom:48px;
+    width:100%;
+  }
+  .cta-row .btn{
+    width:100%;
+    justify-content:center;
+    padding:15px 20px;
+    font-size:.7rem;
+    letter-spacing:.14em;
+    box-sizing:border-box;
+  }
+  .cta-row .btn span{
+    white-space:nowrap;
+  }
+  .cta-row .btn .arrow{
+    margin-left:6px;
+  }
+
+  /* --- HERO STATS: 2x2 GRID --- */
+  .hero-stats{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px 12px;
+    padding-top:28px;
+    max-width:100%;
+  }
+  .hstat{
+    padding-right:0;
+  }
+  .hstat b{
+    font-size:1.65rem;
+  }
+  .hstat small{
+    font-size:.58rem;
+    letter-spacing:.14em;
+  }
+
+  /* --- SCROLL CUE HIDDEN ON MOBILE --- */
+  .scroll-cue{
+    display:none;
+  }
+
+  /* --- SECTION PADDING --- */
+  section{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  /* --- HEADINGS --- */
+  h2.title{
+    font-size:clamp(1.7rem,7.5vw,2.4rem);
+    line-height:1.1;
+  }
+  .eyebrow{
+    font-size:.62rem;
+    letter-spacing:.3em;
+  }
+
+  /* --- GALLERY --- */
+  .gallery-grid.single{
+    max-width:100%;
+    margin-top:36px;
+  }
+  .gallery-grid.single .gallery-item img{
+    height:420px;
+  }
+  .gallery-item figcaption{
+    padding:20px 18px 18px;
+  }
+  .gallery-desc{
+    font-size:.82rem;
+  }
+
+  /* --- CONTACT SECTION --- */
+  .contact h2{
+    font-size:clamp(1.9rem,9vw,3rem);
+  }
+  .contact .cta-row{
+    width:100%;
+  }
+  .contact .cta-row .btn{
+    width:100%;
+  }
+  .meta-chip{
+    font-size:.58rem;
+    padding:9px 14px;
+    letter-spacing:.1em;
+    word-break:break-word;
+    max-width:100%;
+  }
+
+  /* --- FOOTER --- */
+  footer{
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+    font-size:.58rem;
+  }
+  .footer-links{
+    width:100%;
+    justify-content:flex-start;
+    word-break:break-word;
+  }
+}
+
+/* --- Extra small devices --- */
+@media(max-width:380px){
+  .hero h1{
+    font-size:clamp(1.8rem,11vw,2.6rem);
+  }
+  .cta-row .btn{
+    padding:13px 16px;
+    font-size:.64rem;
+  }
+  .hero-stats{
+    grid-template-columns:1fr 1fr;
+  }
+  .hstat b{
+    font-size:1.4rem;
+  }
+  .gallery-grid.single .gallery-item img{
+    height:340px;
+  }
+}
+
+/* --- Tablet refinements --- */
+@media(min-width:601px) and (max-width:880px){
+  .cta-row{
+    gap:14px;
+  }
+  .cta-row .btn{
+    padding:14px 24px;
+    font-size:.7rem;
+  }
+  .gallery-grid.single .gallery-item img{
+    height:480px;
+  }
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
@@ -934,7 +1122,7 @@ footer a:hover{color:var(--magenta)}
           budgets, service quality and international/VIP guest relations.
         </p>
         <p class="lead reveal d2" style="margin-top:18px">
-          I also served as <strong>Director & General Manager of a Phnom Penh nightlife venue</strong>, managing staff,
+          I also served as <strong>General Manager of a Phnom Penh nightlife venue</strong>, managing staff,
           security, administration and customer operations. Fluent in French and English with professional
           working Mandarin Chinese, I have long-term familiarity with multicultural working environments
           across Greater China and Southeast Asia.
@@ -987,7 +1175,7 @@ footer a:hover{color:var(--magenta)}
     <div class="gallery-grid single">
       <!-- Photo — Royal Palace, Phnom Penh -->
       <figure class="gallery-item reveal d2">
-        <img src="https://i.ibb.co/RpPqV48b/photo-2026-09-16-11-32-19.jpg"
+        <img src="https://i.ibb.co/zWpBFP1Z/photo-2026-09-16-11-32-19-2.jpg"
              alt="Jonathan Roche in front of the Royal Palace, Phnom Penh, Cambodia"
              loading="lazy" />
         <figcaption>
@@ -1026,7 +1214,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2017 — 2018</span>
-          <h3>Hotel Manager / Operations Manager</h3>
+          <h3>Hotel Director / Operations Manager</h3>
           <h4>Golden Boat Hotel · Phnom Penh, Cambodia</h4>
           <p>Managed approximately 20 employees across reception, housekeeping and security. Oversaw staff scheduling, day-to-day operations and service quality, managed budgets and operational requirements, and maintained relationships with international and VIP guests while coordinating security, customer service and facility operations.</p>
           <div class="chips">
@@ -1040,7 +1228,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2015 — 2017</span>
-          <h3>General Director</h3>
+          <h3>General Manager</h3>
           <h4>Loby Nightclub · Phnom Penh, Cambodia</h4>
           <p>Managed overall nightclub operations including staff, security, customer relations and administration. Supervised security procedures and crowd-management protocols, led multicultural teams in a high-pressure nightlife environment, and handled incidents, conflict resolution and operational decision-making.</p>
           <div class="chips">
@@ -1054,7 +1242,7 @@ footer a:hover{color:var(--magenta)}
         <div class="tl-dot"></div>
         <div class="tl-card">
           <span class="tl-date">2010 — 2013</span>
-          <h3>Head of Security</h3>
+          <h3>Security Agent</h3>
           <h4>Louis Vuitton · Saint-Tropez, France</h4>
           <p>Protected luxury merchandise and high-value assets. Managed client access and supported VIP customer environments, conducting loss-prevention and security monitoring in a luxury retail setting.</p>
           <div class="chips">
